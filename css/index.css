@@ -11,6 +11,14 @@ body {
  * Globals
  */
 
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233b4153' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233b4153' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+}
+
 .logo-icon {
     max-width: 50px;
     max-height: 50px;
@@ -19,7 +27,7 @@ body {
 .card {
     background-color: #11141e;
     box-shadow: 0 0 10px 1px #3b4153;
-    
+
 }
 
 .image {
@@ -31,7 +39,19 @@ body {
 .icon {
     max-inline-size: 25px;
     position: relative;
-    bottom:4px;
+    bottom: 4px;
+}
+
+@media (max-width:629px) {
+    img#noMobile {
+        display: none;
+    }
+
+    .navbar-nav {
+        position: absolute;
+        padding-left: 5rem;
+    }
+
 }
 
 
@@ -110,6 +130,8 @@ header {
     box-sizing: border-box;
     display: flex;
     padding: 110px 20px;
+    background-size: cover;
+height: 100%; 
 
 
 }
@@ -139,7 +161,7 @@ nav>ul>li>a {
     font-weight: 600;
 }
 
-nav > a > img:hover {
+nav>a>img:hover {
     -moz-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     -o-transition: all 0.5s ease-in-out;
@@ -162,6 +184,15 @@ nav > a > img:hover {
     margin-bottom: 10rem;
 
 }
+
+#aboutme  {
+    background-color: #0e1119;
+}
+
+#skillstab {
+    background-color: #0e1119;
+}
+
 
 
 
@@ -199,85 +230,203 @@ h2 {
 
 }
 
-  .skill { 
-    list-style:none; 
-    padding-top:30px;
-  }
-  
-  .skill li { 
-    margin-bottom:70px; 
-    background:#030303; 
-    height:6px; 
-    border-radius:3px; 
-    border-left:1px solid #111; 
-    border-top:1px solid #111; 
-    border-right:1px solid #333; 
-    border-bottom:1px solid #333;  
-  }
-  
-  .skill li em { 
-    position:relative; 
+.skill {
+    list-style: none;
+    padding-top: 30px;
+}
+
+.skill li {
+    margin-bottom: 70px;
+    background: #030303;
+    height: 6px;
+    border-radius: 3px;
+    border-left: 1px solid #111;
+    border-top: 1px solid #111;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.skill li em {
+    position: relative;
     font-style: normal;
     font-size: 14px;
     text-align: center;
-    color:#dedede;
-    top:-28px;
-  }
-  
-  .blueline { 
-    height: 3px; 
-    margin: 2px 0; 
-    background: #2187e7; 
+    color: #dedede;
+    top: -28px;
+}
+
+.blueline {
+    height: 3px;
+    margin: 2px 0;
+    background: #2187e7;
     position: absolute;
-    box-shadow: 0px 0px 10px 1px rgba(0,198,255,0.6);
-  }
-  
-  
-  
-  .html        { width:34%;  animation:html 2s ease-out;       }
-  @keyframes html        { 0% { width:0px; } 100% { width:34%; }  }
+    box-shadow: 0px 0px 10px 1px rgba(0, 198, 255, 0.6);
+}
 
-  .bootstrap         { width:20%;  animation:bootstrap 2s ease-out;        }
-  @keyframes bootstrap         { 0% { width:0px; } 100% { width:20%; }  }
 
-  .javascript  { width:24%;  animation:javascript 2s ease-out; }
-  @keyframes javascript  { 0% { width:0px; } 100% { width:24%; }  }
 
-  .jquery      { width:14%;  animation:jquery 2s ease-out;     }
-  @keyframes jquery      { 0% { width:0px; } 100% { width:14%; }  }
+.html {
+    width: 34%;
+    animation: html 2s ease-out;
+}
 
-  .laravel      { width:16%;  animation:laravel 2s ease-out;     }
-  @keyframes laravel      { 0% { width:0px; } 100% { width:16%; }  }
+@keyframes html {
+    0% {
+        width: 0px;
+    }
 
-  .django      { width:7%;  animation:django 2s ease-out;     }
-  @keyframes django      { 0% { width:0px; } 100% { width:7%; }  }
+    100% {
+        width: 34%;
+    }
+}
 
-  .kotlin      { width:27%;  animation:kotlin 2s ease-out;     }
-  @keyframes kotlin      { 0% { width:0px; } 100% { width:27%; }  }
+.bootstrap {
+    width: 20%;
+    animation: bootstrap 2s ease-out;
+}
+
+@keyframes bootstrap {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 20%;
+    }
+}
+
+.javascript {
+    width: 24%;
+    animation: javascript 2s ease-out;
+}
+
+@keyframes javascript {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 24%;
+    }
+}
+
+.jquery {
+    width: 14%;
+    animation: jquery 2s ease-out;
+}
+
+@keyframes jquery {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 14%;
+    }
+}
+
+.laravel {
+    width: 16%;
+    animation: laravel 2s ease-out;
+}
+
+@keyframes laravel {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 16%;
+    }
+}
+
+.django {
+    width: 7%;
+    animation: django 2s ease-out;
+}
+
+@keyframes django {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 7%;
+    }
+}
+
+.kotlin {
+    width: 27%;
+    animation: kotlin 2s ease-out;
+}
+
+@keyframes kotlin {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 27%;
+    }
+}
 
 
 /*
 * Projects
 */
-.MultiCarousel { float: left; overflow: hidden; padding: 15px; width: 100%; position:relative; }
-    .MultiCarousel .MultiCarousel-inner { transition: 1s ease all; float: left; }
-        .MultiCarousel .MultiCarousel-inner .item { float: left;}
-        .MultiCarousel .MultiCarousel-inner .item > div { text-align: center; padding:10px; margin:10px; background:#f1f1f1; color:#666;}
-    .MultiCarousel .leftLst, .MultiCarousel .rightLst { position:absolute; border-radius:50%;top:calc(50% - 20px); }
-    .MultiCarousel .leftLst { left:0; }
-    .MultiCarousel .rightLst { right:0; }
-    
-        .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+.MultiCarousel {
+    float: left;
+    overflow: hidden;
+    padding: 15px;
+    width: 100%;
+    position: relative;
+}
+
+.MultiCarousel .MultiCarousel-inner {
+    transition: 1s ease all;
+    float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item {
+    float: left;
+}
+
+.MultiCarousel .MultiCarousel-inner .item>div {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background: #f1f1f1;
+    color: #666;
+}
+
+.MultiCarousel .leftLst, .MultiCarousel .rightLst {
+    position: absolute;
+    border-radius: 50%;
+    top: calc(50% - 20px);
+}
+
+.MultiCarousel .leftLst {
+    left: 0;
+}
+
+.MultiCarousel .rightLst {
+    right: 0;
+}
+
+.MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over {
+    pointer-events: none;
+    background: #ccc;
+}
+
 .projects>.topictitle {
     text-align: center !important;
 }
 
- .projects {
-    margin-top: 5rem;
+.projects {
     margin: 0 10% 0;
     margin-bottom: 10rem;
 
-} 
+}
 
 /* 
 *WAVES

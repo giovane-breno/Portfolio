@@ -31,25 +31,26 @@
             <a class="navbar-brand" href="#page-top"><img src="images/icons/icon.png" alt="Logo Icon"
                     class="logo-icon"></a>
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#about">Sobre Mim</a></li>
-                <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
-                <li class="nav-item"><a class="nav-link" href="testee">Projetos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#aboutme">Sobre Mim</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skillstab">Habilidades</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projetos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
             </ul>
         </nav>
     </header>
     <!-- * Section Sobre Mim -->
-    <section id="about">
+    <section id="about" >
+        <hr id="aboutme">
         <div class="row row-cols-1 row-cols-md-2 in-vh-50">
-            <div class="col-6 my-3" data-aos="zoom-in" data-aos-delay="200">
+            <div class="col-md-6 col-12 my-3" >
 
-                <h2 class="topictitle">Sobre Mim</h1>
-                    <h1 class="mb-5">
+                <h2 id="" class="topictitle" data-aos="fade-down" data-aos-delay="200">Sobre Mim</h1>
+                    <h1 class="mb-5" data-aos="fade-right" data-aos-delay="200">
                         <span>Olá,</span> <br>
                         <span>Sou</span>
                         <span class="text-primary">Giovane Breno</span>
                     </h1>
-
+                    <div data-aos="fade-right" data-aos-delay="200">
                     <h2 class="h3 mb-3">Desenvolvedor Web</h2>
                     <p style="text-align: justify;">
                         Em 2019 iniciei meus estudos na área da programação, uma escola técnica o qual pude adquirir a
@@ -58,7 +59,8 @@
                         perigosos.<br> Atualmente
                         tenho mais prática no back-end, utilizando a framework Laravel.
                     </p>
-                    <div class="social-icons">
+                </div>
+                    <div class="social-icons" data-aos="fade-up" data-aos-delay="200">
                         <a href="https://www.instagram.com/giovane.breno/" target="_blank" class="d-inline-block me-3">
                             <img src="./images/icons/instagram.svg" target="_blank" alt="instagram" class="p-2">
                         </a>
@@ -71,17 +73,17 @@
                     </div>
 
             </div>
-            <div class="col-6" data-aos="zoom-in" data-aos-delay="200">
-                <img src="images/programmer.svg" alt="programmer using a desktop"
+            <span class="d-flex flex-wrap align-items-center" data-aos="fade-left" data-aos-delay="200">
+                <img src="images/programmer.svg" id="noMobile" alt="programmer using a desktop"
                     style="max-width: 100%;max-height: 60%;">
-            </div>
+            </span>
         </div>
         <div class="col-12">
             <div class="d-flex justify-content-center align-items-center" style="height:auto;">
                 <h2>Habilidades </h2> <br>
             </div>
             <div class="d-flex justify-content-center align-items-center" style="height: auto;">
-                <a href="#skills"><img src="./images/icons/chefron.svg" alt="github" class="p-2"
+                <a href="#skillstab"><img src="./images/icons/chefron.svg" alt="github" class="p-2"
                         style="color: #0A4C95;"></a>
             </div>
         </div>
@@ -90,17 +92,18 @@
     <hr>
     <!-- * Section Habilidades  -->
     <section id="skills">
-        <div class="col-12 d-flex justify-content-center align-items-center mb-5" data-aos="zoom-in"
+        <hr class="mb-3" id="skillstab">
+        <div class="col-md-12 d-flex justify-content-center align-items-center mb-5" data-aos="zoom-in"
             data-aos-delay="200">
             <h2 class="topictitle">Habilidades</h1>
         </div>
 
         <div class="row">
-            <div class="col-6" data-aos="fade-right" data-aos-delay="200">
-                <img src="images/stepping.svg" alt="programmer using a desktop"
+            <div class="col-md-6 d-flex flex-wrap align-items-center" data-aos="fade-right" data-aos-delay="200">
+                <img src="images/stepping.svg" id="noMobile" alt="programmer using a desktop"
                     style="max-width: 80%;max-height: 450%;">
             </div>
-            <div class="col-6">
+            <div class="col-md-6 col-sm-12">
                 <ul class="skill" data-aos="fade-left" data-aos-delay="200">
                     <li><span class="blueline html"></span><em>HTML</em></li>
                     <li><span class="blueline bootstrap"></span><em>Bootstrap</em></li>
@@ -130,17 +133,17 @@
     </section>
     <hr id="projects">
     <!-- * Section Projetos -->
-    <section class="projects" style="margin-top: 5rem!important;" data-aos="zoom-in">
-        <div class="col-12 d-flex justify-content-center align-items-center mb-5">
+    <section class="projects mt-5" data-aos="zoom-in">
+        <div class="col-12 d-flex justify-content-center align-items-center mb-4">
             <h2 class="topictitle">Projetos</h1>
         </div>
-        <div class="col-12">
-            <h3 class="text-center topictitle" style="width: auto;color: white!important;" data-aos="zoom-in" data-aos-delay="200">Sistemas feitos para <a
-                    href="https://linktr.ee/cdr_jardimsul">@cdrJardimSul</a>
+        <div class="col-md-12">
+            <h3 class="text-center topictitle" style="width: auto;color: white!important;" data-aos="zoom-in"
+                data-aos-delay="200">Sistemas feitos para <a href="https://linktr.ee/cdr_jardimsul">@cdrJardimSul</a>
             </h3>
             <div class="row">
-                <div class="col-6" data-aos="fade-right" data-aos-delay="200">
-                    <div class="card">
+                <div class="col-md-6 col-12 mt-3" data-aos="fade-right" data-aos-delay="200">
+                    <div class="card h-100">
                         <div id="DjangoCarousel" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#DjangoCarousel" data-slide-to="0" class="active"></li>
@@ -178,8 +181,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6" data-aos="fade-left" data-aos-delay="200">
-                    <div class="card">
+                <div class="col-md-6 col-12 mt-3" data-aos="fade-left" data-aos-delay="200">
+                    <div class="card h-100">
                         <div id="LaravelCarousel" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#LaravelCarousel" data-slide-to="0" class="active"></li>
@@ -211,7 +214,7 @@
                         <div class="card-body">
                             <h4 class="card-title"><img src="images/icons/laravel.png" alt="Laravel"
                                     class="d-inline-block icon"> Sistema de Gestão para Comércio 2.0</h4>
-                            <p class="card-text">Sistema desenvolvido no final de 2022 e mantido até o momento.<br>Feito
+                            <p class="card-text">Sistema desenvolvido no final de 2022 e mantido até o momento. Feito
                                 com base em seu antecessor e aprimorado com mais funções.
                             </p>
                             <span>Tecnologias utilizadas:</span>
@@ -228,12 +231,13 @@
         </div>
 
         <div class="col-12 mt-5">
-            <h2 class="text-center topictitle" style="width: auto;color: white!important;" data-aos="zoom-in" data-aos-delay="200">Projetos desenvolvidos
+            <h2 class="text-center topictitle" style="width: auto;color: white!important;" data-aos="zoom-in"
+                data-aos-delay="200">Projetos desenvolvidos
                 durante estudos</a>
             </h2>
             <div class="row mb-5 ">
-                <div class="col-6" data-aos="fade-right" data-aos-delay="200">
-                    <div class="card" >
+                <div class="col-md-6 col-12 mt-3" data-aos="fade-right" data-aos-delay="200">
+                    <div class="card h-100">
                         <div id="TCCCarousel" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#TCCCarousel" data-slide-to="0" class="active"></li>
@@ -270,9 +274,9 @@
                         <div class="card-body">
                             <h4 class="card-title"><img src="images/icons/kotlin-icon.png" alt="Laravel"
                                     class="d-inline-block icon"> TCC - Sistema de reconhecimento de gases</h4>
-                            <p class="card-text">Sistema feito no inicio de 2021, como primeiro sistema da
-                                loja.<br>Possuía funções CRUD simples como: armazenamento de clientes, produtos e
-                                vendas.</p>
+                            <p class="card-text">Sistema feito no final de 2021, tinha como objetivo captar e analisar
+                                os níveis de gases GLP no ambiente.<br>alertando o proprietário caso detectasse níveis
+                                perigosos.</p>
                             <span>Tecnologias utilizadas:</span>
                             <ul>
                                 <li>Kotlin</li>
@@ -283,12 +287,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6" data-aos="fade-left" data-aos-delay="200">
-                    <div class="card">
-                        <iframe height="385" src="https://www.youtube.com/embed/dZ2NmQ0M07E?controls=0"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
+                <div class="col-md-6 col-12 mt-3" data-aos="fade-left" data-aos-delay="200">
+                    <div class="card h-100">
+                        <div class="card-img-top">
+                            <iframe height="255" width="100%" src="https://www.youtube.com/embed/dZ2NmQ0M07E?controls=0"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+
 
 
                         <div class="card-body">
@@ -310,7 +317,6 @@
                 </div>
             </div>
         </div>
-
 
         <div class="col-12">
             <div class="d-flex justify-content-center align-items-center" style="height:auto;">
