@@ -86,8 +86,9 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 6px;
     height: 15px;
+    
 }
 
 ::-webkit-scrollbar-track-piece {
@@ -123,6 +124,7 @@ hr {
 /*
  * Header & Nav
  */
+ 
 header {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' style='margin:auto%3Bdisplay:block%3Bz-index:1%3Bposition:relative' width='1920' height='371' preserveAspectRatio='xMidYMid' viewBox='0 0 1920 371'%3E%3Cg transform='translate(960 185.5) scale(1 1) translate(-960 -185.5)'%3E%3ClinearGradient id='lg-0.5210455728058276' x1='0' x2='1' y1='0' y2='0'%3E%3Cstop stop-color='%23252f45' offset='0'%3E%3C/stop%3E%3C/linearGradient%3E%3Cpath d='' fill='url(%23lg-0.5210455728058276)' opacity='0.4'%3E%3Canimate attributeName='d' dur='5s' repeatCount='indefinite' keyTimes='0%3B0.333%3B0.667%3B1' calcmod='spline' keySplines='0.2 0 0.2 1%3B0.2 0 0.2 1%3B0.2 0 0.2 1' begin='0s' values='M0 0L 0 134.41795933555582Q 192 162.9285679840898 384 132.3138528095505T 768 181.152987086239T 1152 154.97735435518587T 1536 152.28458571141346T 1920 80.61410066591799L 1920 0 Z%3BM0 0L 0 155.8035637376762Q 192 245.2458694155282 384 198.27154628118348T 768 120.91687879602864T 1152 137.52160526474472T 1536 60.890962562011865T 1920 81.72283736622872L 1920 0 Z%3BM0 0L 0 150.92374676599684Q 192 220.20887579289428 384 180.96576147808372T 768 151.92734923356755T 1152 117.41329766492969T 1536 152.15335087549332T 1920 83.93540799576115L 1920 0 Z%3BM0 0L 0 134.41795933555582Q 192 162.9285679840898 384 132.3138528095505T 768 181.152987086239T 1152 154.97735435518587T 1536 152.28458571141346T 1920 80.61410066591799L 1920 0 Z'%3E%3C/animate%3E%3C/path%3E%3Cpath d='' fill='url(%23lg-0.5210455728058276)' opacity='0.4'%3E%3Canimate attributeName='d' dur='5s' repeatCount='indefinite' keyTimes='0%3B0.333%3B0.667%3B1' calcmod='spline' keySplines='0.2 0 0.2 1%3B0.2 0 0.2 1%3B0.2 0 0.2 1' begin='-1.6666666666666667s' values='M0 0L 0 159.66256983620434Q 192 147.5580451166141 384 122.81231353373828T 768 158.4362604136917T 1152 144.86208191151457T 1536 122.43960438967056T 1920 99.15221517726657L 1920 0 Z%3BM0 0L 0 159.8543080065663Q 192 230.16981836821742 384 194.95389575010483T 768 140.78533714350107T 1152 131.92542703807555T 1536 144.5141569239168T 1920 114.97978834880075L 1920 0 Z%3BM0 0L 0 185.22864044587564Q 192 166.1680949798199 384 141.79670629034194T 768 156.80686372739095T 1152 174.30356100979964T 1536 96.6145983448498T 1920 125.08718682025633L 1920 0 Z%3BM0 0L 0 159.66256983620434Q 192 147.5580451166141 384 122.81231353373828T 768 158.4362604136917T 1152 144.86208191151457T 1536 122.43960438967056T 1920 99.15221517726657L 1920 0 Z'%3E%3C/animate%3E%3C/path%3E%3Cpath d='' fill='url(%23lg-0.5210455728058276)' opacity='0.4'%3E%3Canimate attributeName='d' dur='5s' repeatCount='indefinite' keyTimes='0%3B0.333%3B0.667%3B1' calcmod='spline' keySplines='0.2 0 0.2 1%3B0.2 0 0.2 1%3B0.2 0 0.2 1' begin='-3.3333333333333335s' values='M0 0L 0 126.6777815840439Q 192 215.14515925242117 384 196.00287142538716T 768 131.82032457831212T 1152 122.51134666352773T 1536 88.42373839954645T 1920 46.044085305932256L 1920 0 Z%3BM0 0L 0 143.15913088051582Q 192 222.65430222539203 384 184.574307231805T 768 130.79312631843985T 1152 112.11122992066217T 1536 156.01096820912693T 1920 79.83357339292034L 1920 0 Z%3BM0 0L 0 135.9174711890141Q 192 206.90068506942322 384 170.59093241660767T 768 97.70925958604269T 1152 165.73196217123365T 1536 157.27833483084444T 1920 56.49085775505415L 1920 0 Z%3BM0 0L 0 126.6777815840439Q 192 215.14515925242117 384 196.00287142538716T 768 131.82032457831212T 1152 122.51134666352773T 1536 88.42373839954645T 1920 46.044085305932256L 1920 0 Z'%3E%3C/animate%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
     justify-items: space-between;
@@ -193,7 +195,33 @@ nav>a>img:hover {
     background-color: #0e1119;
 }
 
+input{
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+}
 
+/* DARK MODE INPUTS */
+.dark-mode .custom-control-label::before, .dark-mode .custom-file-label, .dark-mode .custom-file-label::after, .dark-mode .custom-select, .dark-mode .form-control:not(.form-control-navbar):not(.form-control-sidebar), .dark-mode .input-group-text {
+    background-color: #0e1119;
+    color: #fff;
+}
+
+.dark-mode .custom-file-label, .dark-mode .custom-file-label::after, .dark-mode .form-control:not(.form-control-navbar):not(.form-control-sidebar):not(.is-invalid):not(:focus) {
+    border-color: #6c757d;
+}
+
+.swal2-popup.swal2-toast {
+    background-color: #0e1119!important;
+}
+
+.dark-mode .btn-primary {
+    color: #fff;
+    background-color: #3f6791;
+    border-color: #3f6791;
+    box-shadow: none;
+}
 
 
 #about>.row>.col-7>h5 {
@@ -425,6 +453,16 @@ h2 {
 .projects {
     margin: 0 10% 0;
     margin-bottom: 10rem;
+
+}
+
+.contact >.topictitle {
+    text-align: center !important;
+}
+
+.contact {
+    margin: 0 10% 0;
+    margin-bottom: 15rem;
 
 }
 
