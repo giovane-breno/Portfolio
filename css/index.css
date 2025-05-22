@@ -169,7 +169,7 @@ div>a>img {
 
     background: #D9D9D9;
     border-radius: 50%;
-    background-image: url("../images/cML7tPe.png");
+    background-image: url("../images/cML7tPe.jpeg");
     background-size: cover;
 
 }
@@ -814,48 +814,45 @@ h2 {
     }
 
     13.2558%, 53.0930% {
-        content: "Programador B";
+        content: "Programador F";
     }
 
     14.2558%, 52.0930% {
-        content: "Programador Ba";
+        content: "Programador Fu";
     }
 
     15.2558%, 51.0930% {
-        content: "Programador Bac";
+        content: "Programador Ful";
     }
 
     16.2558%, 49.0930% {
-        content: "Programador Back";
+        content: "Programador Full";
     }
 
     17.2558%, 48.0930% {
-        content: "Programador Back ";
+        content: "Programador Full ";
     }
 
     18.2558%, 47.0930% {
-        content: "Programador Back E";
+        content: "Programador Full S";
     }
 
     19.2558%, 46.0930% {
-        content: "Programador Back En";
+        content: "Programador Full St";
     }
 
     20.2558%, 45.0930% {
-        content: "Programador Back End ";
+        content: "Programador Full Sta";
     }
 
     21.2558%, 44.0930% {
-        content: "Programador Back End <";
+        content: "Programador Full Stac";
     }
 
     22.2558%, 43.0530% {
-        content: "Programador Back End </";
+        content: "Programador Full Stack";
     }
 
-    23.2558%, 42.0230% {
-        content: "Programador Back End </>";
-    }
 }
 
 @keyframes blink {
