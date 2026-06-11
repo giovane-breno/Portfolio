@@ -288,6 +288,10 @@
       transition: transform .3s;
     }
     .project-card:hover .project-thumb img{ transform: scale(1.04); }
+    .project-thumb img.alpha-media{
+      object-fit: contain;
+      background: #0b1220;
+    }
 
     /* Petti slideshow */
     .thumb-slider{ width:100%; height:100%; position:relative; }
@@ -1173,7 +1177,20 @@
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
             <div class="project-card">
               <div class="project-thumb">
-                <img src="images/repos/cdr_v3/cdrReact1.png" alt="Sistema de Gestão 3.0" onerror="this.parentElement.innerHTML='<div class=\'project-thumb-placeholder\'>⚙️</div>'">
+                <div class="thumb-slider" id="cdr-slider">
+                  <div class="slide active"><img src="images/repos/cdr_v3/cdrReact1.png" alt="CDR — Tela 1" loading="lazy"></div>
+                  <div class="slide"><img src="images/repos/cdr_v3/cdrReact2.png" alt="CDR — Tela 2" loading="lazy"></div>
+                  <div class="slide"><img src="images/repos/cdr_v3/cdrReact3.png" alt="CDR — Tela 3" loading="lazy"></div>
+                  <div class="slide"><img src="images/repos/cdr_v3/cdrReact4.png" alt="CDR — Tela 4" loading="lazy"></div>
+                  <div class="slide"><img src="images/repos/cdr_v3/cdrReact5.png" alt="CDR — Tela 5" loading="lazy"></div>
+                  <div class="thumb-dots">
+                    <div class="thumb-dot active" data-slide="0"></div>
+                    <div class="thumb-dot" data-slide="1"></div>
+                    <div class="thumb-dot" data-slide="2"></div>
+                    <div class="thumb-dot" data-slide="3"></div>
+                    <div class="thumb-dot" data-slide="4"></div>
+                  </div>
+                </div>
               </div>
               <div class="project-body">
                 <span class="project-badge badge-oss" data-i18n="gestao-badge"><i class="bi bi-stars"></i> Destaque</span>
@@ -1193,7 +1210,18 @@
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
             <div class="project-card">
               <div class="project-thumb">
-                <img src="images/repos/alpha_system/web1.png" alt="Alpha System Web" onerror="this.parentElement.innerHTML='<div class=\'project-thumb-placeholder\'>🏢</div>'">
+                <div class="thumb-slider" id="alpha-slider">
+                  <div class="slide active">
+                    <img class="alpha-media" src="images/repos/alpha_system/web.gif" alt="Alpha System Web - GIF" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'project-thumb-placeholder\'>🏢</div>'">
+                  </div>
+                  <div class="slide">
+                    <img class="alpha-media" src="images/repos/alpha_system/web1.png" alt="Alpha System Web - Screenshot" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'project-thumb-placeholder\'>🏢</div>'">
+                  </div>
+                  <div class="thumb-dots">
+                    <div class="thumb-dot active" data-slide="0"></div>
+                    <div class="thumb-dot" data-slide="1"></div>
+                  </div>
+                </div>
               </div>
               <div class="project-body">
                 <span class="project-badge badge-oss"><i class="bi bi-code-slash"></i> Open Source</span>
@@ -1237,7 +1265,7 @@
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
             <div class="project-card">
               <div class="project-thumb">
-                <img src="images/repos/dynamic form.png" alt="Campos Dinâmicos" onerror="this.parentElement.innerHTML='<div class=\'project-thumb-placeholder\'>📋</div>'">
+                <img src="images/repos/dynamic-form.png" alt="Campos Dinâmicos" onerror="this.parentElement.innerHTML='<div class=\'project-thumb-placeholder\'>📋</div>'">
               </div>
               <div class="project-body">
                 <span class="project-badge badge-oss"><i class="bi bi-code-slash"></i> Open Source</span>
@@ -1259,7 +1287,20 @@
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
             <div class="project-card">
               <div class="project-thumb">
-                <img src="images/repos/alpha_system/github.png" alt="Alpha System TCC" onerror="this.parentElement.innerHTML='<div class=\'project-thumb-placeholder\'>🎓</div>'">
+                <div class="thumb-slider" id="tcc-slider">
+                  <div class="slide active"><img src="images/repos/tcc/tcc1.png" alt="TCC — Tela 1" loading="lazy"></div>
+                  <div class="slide"><img src="images/repos/tcc/tcc2.png" alt="TCC — Tela 2" loading="lazy"></div>
+                  <div class="slide"><img src="images/repos/tcc/tcc3.png" alt="TCC — Tela 3" loading="lazy"></div>
+                  <div class="slide"><img src="images/repos/tcc/tcc4.png" alt="TCC — Tela 4" loading="lazy"></div>
+                  <div class="slide"><img src="images/repos/tcc/tcc5.png" alt="TCC — Tela 5" loading="lazy"></div>
+                  <div class="thumb-dots">
+                    <div class="thumb-dot active" data-slide="0"></div>
+                    <div class="thumb-dot" data-slide="1"></div>
+                    <div class="thumb-dot" data-slide="2"></div>
+                    <div class="thumb-dot" data-slide="3"></div>
+                    <div class="thumb-dot" data-slide="4"></div>
+                  </div>
+                </div>
               </div>
               <div class="project-body">
                 <span class="project-badge badge-oss" data-i18n="tcc-badge"><i class="bi bi-mortarboard"></i> TCC</span>
@@ -1715,6 +1756,63 @@
         timer = setInterval(next, 2800);
       }));
 
+      slider.addEventListener('mouseenter', () => clearInterval(timer));
+      slider.addEventListener('mouseleave', () => { timer = setInterval(next, 2800); });
+    })();
+
+    // CDR slider
+    (function(){
+      const slider = document.getElementById('cdr-slider');
+      if (!slider) return;
+      const slides = slider.querySelectorAll('.slide');
+      const dots   = slider.querySelectorAll('.thumb-dot');
+      let cur = 0, timer;
+      function goTo(i) {
+        slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+        cur = i;
+        slides[cur].classList.add('active'); dots[cur].classList.add('active');
+      }
+      function next() { goTo((cur + 1) % slides.length); }
+      timer = setInterval(next, 2800);
+      dots.forEach(d => d.addEventListener('click', () => { clearInterval(timer); goTo(+d.dataset.slide); timer = setInterval(next, 2800); }));
+      slider.addEventListener('mouseenter', () => clearInterval(timer));
+      slider.addEventListener('mouseleave', () => { timer = setInterval(next, 2800); });
+    })();
+
+    // TCC slider
+    (function(){
+      const slider = document.getElementById('tcc-slider');
+      if (!slider) return;
+      const slides = slider.querySelectorAll('.slide');
+      const dots   = slider.querySelectorAll('.thumb-dot');
+      let cur = 0, timer;
+      function goTo(i) {
+        slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+        cur = i;
+        slides[cur].classList.add('active'); dots[cur].classList.add('active');
+      }
+      function next() { goTo((cur + 1) % slides.length); }
+      timer = setInterval(next, 2800);
+      dots.forEach(d => d.addEventListener('click', () => { clearInterval(timer); goTo(+d.dataset.slide); timer = setInterval(next, 2800); }));
+      slider.addEventListener('mouseenter', () => clearInterval(timer));
+      slider.addEventListener('mouseleave', () => { timer = setInterval(next, 2800); });
+    })();
+
+    // Alpha System slider
+    (function(){
+      const slider = document.getElementById('alpha-slider');
+      if (!slider) return;
+      const slides = slider.querySelectorAll('.slide');
+      const dots   = slider.querySelectorAll('.thumb-dot');
+      let cur = 0, timer;
+      function goTo(i) {
+        slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
+        cur = i;
+        slides[cur].classList.add('active'); dots[cur].classList.add('active');
+      }
+      function next() { goTo((cur + 1) % slides.length); }
+      timer = setInterval(next, 2800);
+      dots.forEach(d => d.addEventListener('click', () => { clearInterval(timer); goTo(+d.dataset.slide); timer = setInterval(next, 2800); }));
       slider.addEventListener('mouseenter', () => clearInterval(timer));
       slider.addEventListener('mouseleave', () => { timer = setInterval(next, 2800); });
     })();
