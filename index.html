@@ -4,293 +4,837 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Giovane Barbosa • Portfólio</title>
-  <meta name="description" content="Portfólio de Giovane Barbosa - Backend (Laravel) e Frontend (React/TS). Projetos, habilidades e contatos." />
+  <meta name="description" content="Portfólio de Giovane Barbosa — Desenvolvedor Fullstack especializado em Laravel, React e TypeScript. APIs RESTful, SaaS e infraestrutura com Docker." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Giovane Barbosa" />
+  <meta property="og:title" content="Giovane Barbosa • Portfólio" />
+  <meta property="og:description" content="Desenvolvedor Fullstack especializado em Laravel, React e TypeScript." />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/57039322?v=4" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="images/icons/favicon.ico" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Giovane Barbosa",
+    "jobTitle": "Fullstack Developer",
+    "description": "Desenvolvedor Fullstack especializado em Laravel, React e TypeScript. APIs RESTful, SaaS e infraestrutura com Docker.",
+    "email": "giovane.breno@gmail.com",
+    "url": "https://giovane-breno.github.io",
+    "image": "https://avatars.githubusercontent.com/u/57039322?v=4",
+    "sameAs": [
+      "https://github.com/giovane-breno",
+      "https://www.linkedin.com/in/giovane-breno/"
+    ],
+    "knowsAbout": ["Laravel", "PHP", "React", "Vue.js", "TypeScript", "Docker", "MySQL", "Git", "Tailwind CSS"]
+  }
+  </script>
 
-  <!-- Bootstrap 5 (atual) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-  <!-- Icons (Bootstrap Icons) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg-0:#070A12;
-      --bg-1:#0B1022;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.08);
-      --stroke: rgba(255,255,255,.10);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.72);
-      --muted2: rgba(255,255,255,.55);
-      --brand1:#7C3AED; /* roxo */
-      --brand2:#22D3EE; /* cyan */
-      --shadow: 0 20px 60px rgba(0,0,0,.55);
-      --radius: 18px;
+      --bg-0:#060810;
+      --bg-1:#0A0E1E;
+      --card: rgba(255,255,255,.05);
+      --card2: rgba(255,255,255,.07);
+      --stroke: rgba(255,255,255,.09);
+      --stroke2: rgba(255,255,255,.14);
+      --text: rgba(255,255,255,.93);
+      --muted: rgba(255,255,255,.68);
+      --muted2: rgba(255,255,255,.45);
+      --brand1:#6D28D9;
+      --brand2:#06B6D4;
+      --accent: #A78BFA;
+      --shadow: 0 24px 64px rgba(0,0,0,.6);
+      --radius: 20px;
     }
 
-    *{ box-sizing:border-box; }
-    html, body { height:100%; }
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    html{ scroll-behavior: smooth; }
     body{
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      font-family: Inter, system-ui, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,.35), transparent 60%),
-        radial-gradient(900px 500px at 90% 30%, rgba(34,211,238,.25), transparent 55%),
-        radial-gradient(900px 600px at 40% 100%, rgba(255,255,255,.08), transparent 60%),
-        linear-gradient(180deg, var(--bg-0), var(--bg-1));
+        radial-gradient(1400px 700px at 5% 0%, rgba(109,40,217,.3) 0%, transparent 55%),
+        radial-gradient(800px 500px at 95% 20%, rgba(6,182,212,.2) 0%, transparent 50%),
+        radial-gradient(600px 400px at 50% 100%, rgba(109,40,217,.15) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 100%);
       overflow-x:hidden;
+      min-height:100vh;
     }
 
-    /* Navbar */
+    /* ── Navbar ── */
     .nav-glass{
-      background: rgba(10, 15, 30, .55);
-      backdrop-filter: blur(14px);
+      background: rgba(6,8,16,.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--stroke);
     }
     .nav-link{
       color: var(--muted) !important;
       font-weight: 600;
-      letter-spacing: .2px;
+      font-size: .92rem;
+      letter-spacing: .02em;
+      padding: 6px 0 !important;
       position: relative;
+      transition: color .2s;
     }
     .nav-link:hover{ color: var(--text) !important; }
     .nav-link::after{
       content:"";
       position:absolute;
-      left:0; bottom:-6px;
+      left:0; bottom:-2px;
       width:0; height:2px;
       background: linear-gradient(90deg, var(--brand1), var(--brand2));
       transition: width .25s ease;
+      border-radius:2px;
     }
     .nav-link:hover::after{ width:100%; }
 
-    .logo-badge{
-      width: 42px; height: 42px;
-      display:grid; place-items:center;
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(124,58,237,.28), rgba(34,211,238,.18));
-      border: 1px solid var(--stroke);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      overflow:hidden;
+    .logo-text{
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: -.01em;
+      background: linear-gradient(90deg, #A78BFA, #67E8F9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
-    .logo-badge img{ width: 26px; height: 26px; object-fit: contain; }
 
-    /* Sections */
-    section{ padding: 96px 0; }
-    #about{ padding-top: 120px; } /* espaço da navbar fixa */
+    /* ── Layout ── */
+    section{ padding: 100px 0; }
+    #about{ padding-top: 140px; }
+    .container-narrow{ max-width: 1060px; }
 
-    .container-narrow{ max-width: 1040px; }
-
+    /* ── Typography ── */
     .kicker{
-      color: var(--muted2);
+      color: var(--accent);
       font-weight: 700;
-      letter-spacing: .14em;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      font-size: .82rem;
+      font-size: .78rem;
+      margin-bottom: 10px;
     }
     .h1-like{
       font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      font-size: clamp(2rem, 4.2vw, 3.25rem);
-      margin: 10px 0 14px;
+      letter-spacing: -0.035em;
+      line-height: 1.04;
+      font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+      margin-bottom: 16px;
+    }
+    .h2-like{
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      margin-bottom: 0;
     }
     .lead-like{
       color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.75;
-      margin: 0;
+      font-size: 1.04rem;
+      line-height: 1.78;
     }
 
-    /* Cards */
+    .gradient-text{
+      background: linear-gradient(100deg, #A78BFA 0%, #67E8F9 60%, #A78BFA 100%);
+      background-size: 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shimmer 4s linear infinite;
+    }
+    @keyframes shimmer{ 0%{background-position:0%} 100%{background-position:200%} }
+
+    /* ── Glass card ── */
     .glass{
       background: var(--card);
-      border: 1px solid var(--stroke);
+      border: 1px solid var(--stroke2);
       border-radius: var(--radius);
+      backdrop-filter: blur(10px);
       box-shadow: var(--shadow);
     }
 
-    .hero-card{ padding: 34px; }
-    @media (max-width: 992px){
-      .hero-card{ padding: 22px; }
-    }
-
-    /* Avatar blob */
-    .blob{
-      width: 280px; height: 280px;
-      border-radius: 36% 64% 59% 41% / 49% 40% 60% 51%;
-      background:
-        radial-gradient(circle at 30% 25%, rgba(255,255,255,.25), transparent 45%),
-        linear-gradient(135deg, rgba(124,58,237,.55), rgba(34,211,238,.28));
-      border: 1px solid rgba(255,255,255,.16);
+    /* ── Avatar ── */
+    .avatar-wrap{
       position: relative;
-      box-shadow: 0 30px 90px rgba(0,0,0,.55);
-      overflow:hidden;
+      width: 260px; height: 260px;
     }
-    .blob::after{
-      content:"";
-      position:absolute; inset:-40px;
-      background:
-        radial-gradient(circle at 70% 30%, rgba(255,255,255,.20), transparent 35%),
-        radial-gradient(circle at 40% 75%, rgba(255,255,255,.12), transparent 45%);
-      transform: rotate(10deg);
-      opacity:.9;
+    .avatar-ring{
+      position:absolute; inset:-3px;
+      border-radius: 50%;
+      background: conic-gradient(from 180deg, var(--brand1), var(--brand2), var(--brand1));
+      animation: spin 6s linear infinite;
+    }
+    @keyframes spin{ to{transform:rotate(360deg)} }
+    .avatar-inner{
+      position:absolute; inset:3px;
+      border-radius: 50%;
+      overflow:hidden;
+      background: var(--bg-0);
+    }
+    .avatar-inner img{
+      width:100%; height:100%;
+      object-fit:cover;
+      display:block;
     }
 
-    /* Buttons */
+    /* ── Buttons ── */
     .btn-brand{
-      border: 1px solid rgba(255,255,255,.18);
-      background: linear-gradient(135deg, rgba(124,58,237,.85), rgba(34,211,238,.55));
+      border: 1px solid rgba(167,139,250,.4);
+      background: linear-gradient(135deg, rgba(109,40,217,.9), rgba(6,182,212,.6));
       color: white;
       font-weight: 700;
+      font-size: .9rem;
       border-radius: 14px;
-      padding: 10px 14px;
-      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+      padding: 10px 18px;
+      transition: filter .2s, transform .15s;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
     }
-    .btn-brand:hover{ filter: brightness(1.06); color:white; }
+    .btn-brand:hover{ filter: brightness(1.08); color:white; transform:translateY(-1px); }
 
     .btn-ghost{
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      color: var(--text);
+      border: 1px solid var(--stroke2);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
       font-weight: 700;
+      font-size: .9rem;
       border-radius: 14px;
-      padding: 10px 14px;
+      padding: 10px 18px;
+      transition: background .2s, color .2s, transform .15s;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
     }
-    .btn-ghost:hover{ background: rgba(255,255,255,.09); color: var(--text); }
+    .btn-ghost:hover{ background: rgba(255,255,255,.09); color: var(--text); transform:translateY(-1px); }
 
-    /* Skills */
+    /* ── Tags ── */
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke2);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight: 600;
+      font-size: .82rem;
+      white-space: nowrap;
+    }
+
+    /* ── Skills ── */
     .skill-card{
       padding: 16px;
       height: 100%;
       background: var(--card2);
       border: 1px solid var(--stroke);
       border-radius: 16px;
-      transition: transform .18s ease, background .18s ease;
+      transition: transform .18s, background .18s, border-color .18s;
+      cursor:default;
     }
     .skill-card:hover{
-      transform: translateY(-4px);
+      transform: translateY(-5px);
       background: rgba(255,255,255,.10);
+      border-color: var(--stroke2);
     }
     .skill-icon{
-      width: 44px; height: 44px;
-      border-radius: 14px;
+      width: 42px; height: 42px;
+      border-radius: 12px;
       display:grid; place-items:center;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.20);
+      border: 1px solid var(--stroke2);
+      background: rgba(0,0,0,.25);
       overflow:hidden;
+      flex-shrink:0;
     }
-    .skill-icon img{ width: 26px; height: 26px; object-fit: contain; }
-    .skill-name{ font-weight: 800; margin: 0; }
-    .skill-meta{ color: var(--muted2); margin: 0; font-size: .95rem; }
+    .skill-icon img{ width: 24px; height: 24px; object-fit: contain; }
+    .skill-name{ font-weight: 700; font-size: .95rem; color: var(--text); }
+    .skill-meta{ color: var(--muted2); font-size: .85rem; }
 
-    /* Projects */
+    /* ── Projects ── */
     .project-card{
       height: 100%;
-      background: rgba(255,255,255,.06);
+      background: var(--card);
       border: 1px solid var(--stroke);
       border-radius: 18px;
       overflow:hidden;
-      transition: transform .18s ease, background .18s ease;
+      transition: transform .2s, background .2s, border-color .2s;
     }
     .project-card:hover{
-      transform: translateY(-4px);
-      background: rgba(255,255,255,.09);
+      transform: translateY(-5px);
+      background: var(--card2);
+      border-color: var(--stroke2);
     }
     .project-thumb{
-      aspect-ratio: 16/9;
-      background: rgba(0,0,0,.25);
-      border-bottom: 1px solid rgba(255,255,255,.10);
+      aspect-ratio: 16/8;
+      background: rgba(109,40,217,.12);
+      border-bottom: 1px solid var(--stroke);
       overflow:hidden;
+      position:relative;
     }
     .project-thumb img{
       width:100%; height:100%;
       object-fit: cover;
       display:block;
-      transform: scale(1.02);
+      transition: transform .3s;
     }
-    .project-body{ padding: 16px; }
-    .project-title{
-      font-weight: 800;
-      letter-spacing: -0.01em;
-      margin: 0 0 6px;
+    .project-card:hover .project-thumb img{ transform: scale(1.04); }
+
+    /* Petti slideshow */
+    .thumb-slider{ width:100%; height:100%; position:relative; }
+    .thumb-slider .slide{
+      position:absolute; inset:0;
+      opacity:0;
+      transition: opacity .8s ease;
+    }
+    .thumb-slider .slide.active{ opacity:1; }
+    .thumb-slider .slide img{
+      width:100%; height:100%;
+      object-fit:cover; object-position: top left;
+      display:block;
+    }
+    .thumb-dots{
+      position:absolute; bottom:6px; left:50%; transform:translateX(-50%);
+      display:flex; gap:5px; z-index:2;
+    }
+    .thumb-dot{
+      width:6px; height:6px; border-radius:50%;
+      background:rgba(255,255,255,.4);
+      cursor:pointer; transition: background .3s, transform .3s;
+    }
+    .thumb-dot.active{ background:#fff; transform:scale(1.3); }
+
+    /* Lightbox */
+    #lightbox{
+      display:none; position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,.88); backdrop-filter:blur(6px);
+      align-items:center; justify-content:center;
+      cursor:zoom-out;
+    }
+    #lightbox.open{ display:flex; }
+    #lightbox img{
+      max-width:90vw; max-height:88vh;
+      border-radius:10px;
+      box-shadow:0 24px 80px rgba(0,0,0,.7);
+      cursor:default;
+      animation: lb-in .18s ease;
+    }
+    @keyframes lb-in{
+      from{ opacity:0; transform:scale(.94); }
+      to  { opacity:1; transform:scale(1); }
+    }
+    #lb-close{
+      position:absolute; top:18px; right:22px;
+      font-size:2rem; color:#fff; cursor:pointer;
+      line-height:1; opacity:.7; transition:opacity .2s;
+    }
+    #lb-close:hover{ opacity:1; }
+    #lb-prev, #lb-next{
+      position:absolute; top:50%; transform:translateY(-50%);
+      font-size:2rem; color:#fff; cursor:pointer;
+      opacity:.6; transition:opacity .2s;
+      background:rgba(0,0,0,.3); border-radius:50%;
+      width:48px; height:48px; display:flex; align-items:center; justify-content:center;
+    }
+    #lb-prev:hover, #lb-next:hover{ opacity:1; }
+    #lb-prev{ left:16px; }
+    #lb-next{ right:16px; }
+    .project-thumb{ cursor:zoom-in; }
+
+    .project-thumb-placeholder{
+      width:100%; height:100%;
       display:flex;
-      gap:10px;
       align-items:center;
+      justify-content:center;
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, rgba(109,40,217,.2), rgba(6,182,212,.1));
     }
-    .project-title img{ width: 20px; height: 20px; object-fit: contain; }
-    .project-desc{ color: var(--muted); margin: 0 0 10px; line-height: 1.6; }
-    .tag{
+
+    .project-body{ padding: 18px; }
+    .project-badge{
       display:inline-flex;
       align-items:center;
-      gap:6px;
-      padding: 6px 10px;
+      gap:5px;
+      padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.20);
-      color: rgba(255,255,255,.80);
+      font-size: .75rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .badge-live{
+      background: rgba(16,185,129,.15);
+      color: #34D399;
+      border: 1px solid rgba(52,211,153,.25);
+    }
+    .badge-oss{
+      background: rgba(167,139,250,.12);
+      color: var(--accent);
+      border: 1px solid rgba(167,139,250,.25);
+    }
+    .project-title{
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: -.01em;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .project-desc{
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+    .project-tags{ margin-bottom: 14px; display:flex; flex-wrap:wrap; gap:5px; }
+    .ptag{
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: .78rem;
       font-weight: 600;
-      font-size: .85rem;
-      margin: 0 6px 6px 0;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--stroke);
+      color: var(--muted);
+    }
+    .project-link{
+      color: var(--accent);
+      font-weight: 700;
+      font-size: .88rem;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      transition: gap .15s;
+    }
+    .project-link:hover{ gap:8px; color: var(--accent); }
+
+    /* ── Stats bar ── */
+    .stat-item{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:4px;
+    }
+    .stat-num{
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      background: linear-gradient(90deg, #A78BFA, #67E8F9);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .stat-label{
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--muted2);
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    .stat-divider{
+      width:1px;
+      height:40px;
+      background: var(--stroke2);
+    }
+
+    /* ── Footer ── */
+    footer{
+      padding: 28px 0 44px;
+      color: var(--muted2);
+      border-top: 1px solid var(--stroke);
+      font-size: .88rem;
+    }
+    footer a{ color: var(--muted); text-decoration:none; transition: color .2s; }
+    footer a:hover{ color: var(--text); }
+
+    ::selection{ background: rgba(109,40,217,.35); }
+    [id]{ scroll-margin-top: 96px; }
+
+    /* ── Typing animation ── */
+    #hero-kicker{
+      display: inline-block;
+      border-right: 2px solid transparent;
+    }
+    #hero-kicker.typing{
+      border-right: 2px solid var(--accent);
+      animation: blink-cur .7s step-end infinite;
+    }
+    @keyframes blink-cur{ 50%{ border-right-color: transparent; } }
+
+    /* ── Experience two-column timeline ── */
+    .exp-list{
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .exp-row{
+      display: grid;
+      grid-template-columns: 120px 20px 1fr;
+      gap: 0 0;
+      align-items: start;
+    }
+    /* left: period column */
+    .exp-meta{
+      text-align: right;
+      padding: 18px 16px 18px 0;
+      padding-top: 20px;
+    }
+    .exp-year{
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--muted);
+      line-height: 1.4;
+      display: block;
+    }
+    .exp-duration{
+      font-size: .72rem;
+      color: var(--muted2);
+      display: block;
+      margin-top: 2px;
+    }
+    /* center: dot + line */
+    .exp-axis{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+    }
+    .exp-dot{
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--bg-1);
+      border: 2px solid var(--stroke2);
+      flex-shrink: 0;
+      margin-top: 20px;
+      transition: border-color .25s, background .25s, box-shadow .25s;
+      z-index: 1;
+    }
+    .exp-row:first-child .exp-dot{
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(167,139,250,.55);
+    }
+    .exp-line{
+      flex: 1;
+      width: 2px;
+      background: var(--stroke);
+      margin-top: 4px;
+    }
+    .exp-row:last-child .exp-line{ background: transparent; }
+    /* right: card */
+    .exp-card{
+      margin: 10px 0 10px 16px;
+      padding: 16px 18px;
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      transition: background .2s, border-color .2s, box-shadow .2s, transform .2s;
+    }
+    .exp-card:hover{
+      background: var(--card2);
+      border-color: var(--stroke2);
+      box-shadow: 0 8px 28px rgba(0,0,0,.2);
+      transform: translateY(-2px);
+    }
+    .exp-row:hover .exp-dot{
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: 0 0 8px rgba(167,139,250,.5);
+    }
+    .exp-header{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 3px;
+    }
+    .exp-role{ font-weight: 700; font-size: .96rem; color: var(--text); }
+    .exp-type{
+      font-size: .72rem; font-weight: 600;
+      color: var(--muted2);
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke2);
+      background: rgba(255,255,255,.04);
+    }
+    .exp-badge-current{
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: .71rem; font-weight: 700;
+      color: #34D399;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(52,211,153,.25);
+      background: rgba(16,185,129,.12);
+    }
+    .exp-company{ color: var(--accent); font-size: .86rem; font-weight: 600; margin-bottom: 8px; }
+    .exp-desc{ color: var(--muted); font-size: .87rem; line-height: 1.65; margin-bottom: 10px; }
+
+    @media(max-width:576px){
+      .exp-row{ grid-template-columns: 0 20px 1fr; }
+      .exp-meta{ display: none; }
+    }
+
+    /* ── Cursor glow ── */
+    #cursor-glow{
+      position:fixed;
+      width:520px; height:520px;
+      border-radius:50%;
+      background: radial-gradient(circle, rgba(109,40,217,.11) 0%, transparent 65%);
+      pointer-events:none;
+      transform:translate(-50%,-50%);
+      left:-9999px; top:-9999px;
+      z-index:9998;
+      will-change: left, top;
+      transition: left .07s ease-out, top .07s ease-out;
+    }
+
+    /* ── Toggle buttons ── */
+    .ctrl-btn{
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--stroke2);
+      color: var(--muted);
+      border-radius: 10px;
+      padding: 5px 11px;
+      font-size: .82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+      line-height: 1.4;
       white-space: nowrap;
     }
-    .project-actions a{
-      text-decoration:none;
-      font-weight: 800;
+    .ctrl-btn:hover{ background: rgba(255,255,255,.12); color: var(--text); }
+
+    /* ── Light mode ── */
+    [data-theme="light"]{
+      --bg-0: #f3f4fb;
+      --bg-1: #e9eaf5;
+      --card: rgba(255,255,255,.75);
+      --card2: rgba(255,255,255,.9);
+      --stroke: rgba(0,0,0,.07);
+      --stroke2: rgba(0,0,0,.13);
+      --text: rgba(0,0,0,.87);
+      --muted: rgba(0,0,0,.56);
+      --muted2: rgba(0,0,0,.36);
+      --shadow: 0 24px 64px rgba(0,0,0,.10);
+    }
+    [data-theme="light"] body{
+      background:
+        radial-gradient(1400px 700px at 5% 0%, rgba(109,40,217,.07) 0%, transparent 55%),
+        radial-gradient(800px 500px at 95% 20%, rgba(6,182,212,.05) 0%, transparent 50%),
+        linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 100%);
+    }
+    [data-theme="light"] .nav-glass{
+      background: rgba(240,241,250,.88);
+    }
+    [data-theme="light"] #cursor-glow{
+      background: radial-gradient(circle, rgba(109,40,217,.07) 0%, transparent 65%);
     }
 
-    /* Footer */
-    footer{
-      padding: 30px 0 50px;
-      color: var(--muted2);
-      border-top: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.12);
-      backdrop-filter: blur(10px);
+    /* ── Available badge ── */
+    .badge-available{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(16,185,129,.1);
+      border: 1px solid rgba(52,211,153,.28);
+      color: #34D399;
+      font-size: .78rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      letter-spacing: .01em;
+    }
+    .badge-available-dot{
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #34D399;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .badge-available-dot::before{
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: rgba(52,211,153,.45);
+      animation: pulse-ring 1.6s ease-out infinite;
+    }
+    @keyframes pulse-ring{
+      0%  { transform: scale(1); opacity: .9; }
+      100%{ transform: scale(2.4); opacity: 0; }
     }
 
-    /* Nice selection */
-    ::selection{ background: rgba(124,58,237,.35); }
+    /* ── Dynamic section background ── */
+    #section-bg{ position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+    .sg-layer{
+      position: absolute; inset: 0;
+      opacity: 0;
+      transition: opacity 1.4s ease;
+    }
+    .sg-layer.active{ opacity: 1; }
+    #sg-about     { background: radial-gradient(1000px 700px at 8% 8%,  rgba(109,40,217,.22) 0%, transparent 55%); }
+    #sg-experience{ background: radial-gradient(900px 650px  at 92% 18%, rgba(99,102,241,.18) 0%, transparent 55%); }
+    #sg-skills    { background: radial-gradient(900px 650px  at 50% 45%, rgba(6,182,212,.16)  0%, transparent 55%); }
+    #sg-projects  { background: radial-gradient(900px 650px  at 8% 72%,  rgba(167,139,250,.18) 0%, transparent 55%); }
+    #sg-contact   { background: radial-gradient(900px 650px  at 50% 92%, rgba(16,185,129,.13) 0%, transparent 55%); }
 
-    /* Anchor offset for fixed nav */
-    [id]{ scroll-margin-top: 92px; }
+    /* ── Back to top button ── */
+    #back-to-top{
+      position: fixed;
+      bottom: 32px; right: 32px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(109,40,217,.9), rgba(6,182,212,.6));
+      border: 1px solid rgba(167,139,250,.4);
+      color: white;
+      display: grid; place-items: center;
+      font-size: 1rem;
+      cursor: pointer;
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .25s, transform .25s, filter .2s;
+      pointer-events: none;
+      box-shadow: 0 4px 20px rgba(109,40,217,.35);
+    }
+    #back-to-top.visible{
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    #back-to-top:hover{ filter: brightness(1.15); }
+
+
+    /* ── Toast ── */
+    .toast-msg{
+      position: fixed;
+      bottom: 36px; left: 50%;
+      transform: translateX(-50%) translateY(14px);
+      background: rgba(10,14,30,.92);
+      border: 1px solid var(--stroke2);
+      color: var(--text);
+      padding: 10px 22px;
+      border-radius: 14px;
+      font-size: .88rem;
+      font-weight: 600;
+      z-index: 9999;
+      opacity: 0;
+      transition: opacity .22s, transform .22s;
+      backdrop-filter: blur(12px);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .toast-msg.show{
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    [data-theme="light"] .toast-msg{
+      background: rgba(240,241,250,.95);
+    }
+
+    /* ── Scroll progress bar ── */
+    #scroll-bar{
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px; width: 0%;
+      background: linear-gradient(90deg, #6D28D9, #06B6D4);
+      z-index: 9999;
+      pointer-events: none;
+      border-radius: 0 2px 2px 0;
+      isolation: isolate;
+    }
+    /* oculta scrollbar nativa do browser */
+    html{ scrollbar-width: none; }
+    html::-webkit-scrollbar{ display: none; }
+
+    /* ── Active nav link ── */
+    .nav-link.active{ color: var(--text) !important; }
+    .nav-link.active::after{ width: 100%; }
+
+    /* ── Contact section ── */
+    .contact-grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 40px;
+    }
+    @media(max-width:768px){ .contact-grid{ grid-template-columns: 1fr; } }
+    .contact-item{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--text);
+      transition: background .2s, border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .contact-item:hover{
+      background: var(--card2);
+      border-color: var(--stroke2);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0,0,0,.25);
+      color: var(--text);
+    }
+    .contact-icon{
+      width: 46px; height: 46px;
+      border-radius: 13px;
+      display: grid; place-items: center;
+      font-size: 1.25rem;
+      background: rgba(109,40,217,.12);
+      border: 1px solid rgba(167,139,250,.2);
+      flex-shrink: 0;
+      color: var(--accent);
+      transition: background .2s;
+    }
+    .contact-item:hover .contact-icon{ background: rgba(109,40,217,.22); }
+    .contact-label{ font-size: .72rem; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 2px; }
+    .contact-value{ font-size: .9rem; font-weight: 600; color: var(--text); }
   </style>
 </head>
 
 <body>
+  <div id="scroll-bar"></div>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-glass">
     <div class="container container-narrow py-2">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
-        <span class="logo-badge">
-          <img src="images/icons/icon.png" alt="Logo" />
-        </span>
-        <span class="fw-bold">Giovane</span>
+      <a class="navbar-brand" href="#top">
+        <span class="logo-text">giovane.dev</span>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
-        aria-controls="nav" aria-expanded="false" aria-label="Alternar navegação">
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div id="nav" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3 py-3 py-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
-          <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projetos</a></li>
-          <li class="nav-item">
-            <a class="btn btn-brand ms-lg-2" href="https://www.linkedin.com/in/giovane-breno/" target="_blank" rel="noreferrer">
-              <i class="bi bi-linkedin me-2"></i>LinkedIn
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4 py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav-about">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience" data-i18n="nav-experience">Experiência</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Stack</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav-projects">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav-contact">Contato</a></li>
+          <li class="nav-item ms-lg-2">
+            <a class="btn-brand" href="https://www.linkedin.com/in/giovane-breno/" target="_blank" rel="noreferrer">
+              <i class="bi bi-linkedin"></i>LinkedIn
             </a>
+          </li>
+          <li class="nav-item ms-lg-2 d-flex gap-1">
+            <button class="ctrl-btn" id="themeToggle" title="Toggle theme">🌙</button>
+            <button class="ctrl-btn" id="langToggle">🇺🇸 EN</button>
           </li>
         </ul>
       </div>
@@ -298,338 +842,438 @@
   </nav>
 
   <main id="top">
-    <!-- About / Hero -->
+    <!-- ── Hero ── -->
     <section id="about">
       <div class="container container-narrow">
-        <div class="glass hero-card" data-aos="zoom-in">
-          <div class="row g-4 align-items-center">
+        <div class="glass p-4 p-lg-5" data-aos="fade-up">
+          <div class="row g-5 align-items-center">
+            
             <div class="col-lg-7">
-              <div class="kicker">Fullstack Developer</div>
+                  <div class="badge-available">
+                  <span class="badge-available-dot"></span>
+                  <span data-i18n="badge-available">Disponível para oportunidades</span>
+                </div>
+                <br>
+              <div class="kicker" id="hero-kicker">Fullstack Developer</div>
               <h1 class="h1-like">
-                Olá, sou <span style="background:linear-gradient(90deg,var(--brand1),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Giovane Barbosa</span>.
+                <span data-i18n="hero-greeting">Olá, sou</span> <span class="gradient-text">Giovane Barbosa</span>.
               </h1>
-              <p class="lead-like mb-3">
-                Técnico em Informática e graduado em Análise e Desenvolvimento de Sistemas.
-                Construo produtos com foco em performance, código limpo e experiência do usuário.
+              <p class="lead-like mb-3" data-i18n="hero-p1">
+                Desenvolvedor Fullstack com graduação em ADS. Construo produtos SaaS do zero — arquitetura sólida, código limpo e entrega que funciona em produção.
               </p>
-              <p class="lead-like mb-4">
-                Backend com <b>Laravel</b> e APIs RESTful; frontend com <b>React + TypeScript</b> e <b>TailwindCSS</b>.
-                Experiência com <b>MySQL</b>, <b>PostgreSQL</b> e <b>Firebase</b>.
+              <p class="lead-like mb-4" data-i18n="hero-p2">
+                Backend com <strong>Laravel</strong> e APIs RESTful; frontend com <strong>React</strong>, <strong>Vue</strong> e <strong>TypeScript</strong>. Cuido do ciclo completo: do desenvolvimento ao deploy com CI/CD, Docker e VPS.
               </p>
 
-              <div class="d-flex flex-wrap gap-2">
-                <a class="btn btn-brand" href="#projects">
-                  <i class="bi bi-rocket-takeoff me-2"></i>Ver projetos
+              <div class="d-flex flex-wrap gap-2 mb-4">
+                <a class="btn-brand" href="#projects">
+                  <i class="bi bi-rocket-takeoff"></i><span data-i18n="btn-projects">Ver projetos</span>
                 </a>
-                <a class="btn btn-ghost" href="https://github.com/giovane-breno" target="_blank" rel="noreferrer">
-                  <i class="bi bi-github me-2"></i>GitHub
+                <a class="btn-ghost" href="https://github.com/giovane-breno" target="_blank" rel="noreferrer">
+                  <i class="bi bi-github"></i>GitHub
                 </a>
-                <a class="btn btn-ghost" href="https://www.linkedin.com/in/giovane-breno/" target="_blank" rel="noreferrer">
-                  <i class="bi bi-linkedin me-2"></i>LinkedIn
+                <a class="btn-ghost" href="mailto:giovane.breno@gmail.com">
+                  <i class="bi bi-envelope"></i><span data-i18n="btn-contact">Contato</span>
                 </a>
+                <!-- <a class="btn-ghost" href="cv.pdf" download>
+                  <i class="bi bi-download"></i><span data-i18n="btn-cv">Download CV</span>
+                </a> -->
               </div>
 
-              <div class="mt-4 d-flex flex-wrap gap-2">
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tag"><i class="bi bi-check2-circle"></i> Laravel & PHP</span>
+                <span class="tag"><i class="bi bi-check2-circle"></i> React & Vue</span>
+                <span class="tag"><i class="bi bi-check2-circle"></i> CI/CD & Docker</span>
                 <span class="tag"><i class="bi bi-check2-circle"></i> APIs REST</span>
-                <span class="tag"><i class="bi bi-check2-circle"></i> Clean Code</span>
-                <span class="tag"><i class="bi bi-check2-circle"></i> PostgreSQL</span>
-                <span class="tag"><i class="bi bi-check2-circle"></i> React/TS</span>
               </div>
             </div>
 
-            <div class="col-lg-5 d-flex justify-content-center">
-              <div class="blob" aria-hidden="true"></div>
+            <div class="col-lg-5 d-flex flex-column align-items-center gap-4">
+              <div class="avatar-wrap">
+                <div class="avatar-ring"></div>
+                <div class="avatar-inner">
+                  <img src="https://avatars.githubusercontent.com/u/57039322?v=4" alt="Giovane Barbosa" />
+                </div>
+              </div>
+
+              <!-- Stats -->
+              <div class="glass px-4 py-3 d-flex gap-4 align-items-center w-100 justify-content-center">
+                <div class="stat-item">
+                  <span class="stat-num count-up" id="stat-years-num" data-suffix="+">0+</span>
+                  <span class="stat-label" data-i18n="stat-years">Anos</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                  <span class="stat-num count-up" data-count-to="10" data-suffix="+">0+</span>
+                  <span class="stat-label" data-i18n="stat-projects">Projetos</span>
+                </div>
+              </div>
+             
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills">
+    <!-- ── Experience ── -->
+    <section id="experience">
       <div class="container container-narrow">
-        <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4" data-aos="fade-up">
-          <div>
-            <div class="kicker">Stack</div>
-            <h2 class="h1-like" style="font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom:0;">Habilidades</h2>
+        <div class="row align-items-end justify-content-between g-3 mb-5" data-aos="fade-up">
+          <div class="col-auto">
+            <div class="kicker" data-i18n="exp-kicker">Carreira</div>
+            <h2 class="h2-like" data-i18n="exp-title">Experiência</h2>
           </div>
-          <p class="lead-like m-0" style="max-width: 520px;">
-            Tecnologias que uso no dia a dia — com foco em qualidade, manutenção e entrega.
-          </p>
+          <div class="col-lg-5">
+            <p class="lead-like m-0" style="font-size:.95rem;" data-i18n="exp-sub">Empresas onde trabalhei e o que entreguei ao longo da carreira.</p>
+          </div>
         </div>
 
-        <div class="row g-3">
-          <!-- Você pode ajustar os textos do "meta" como quiser -->
-          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up">
-            <div class="skill-card">
-              <div class="d-flex gap-3 align-items-center">
-                <div class="skill-icon"><img src="./images/skills/react-16-svgrepo-com.svg" alt="React"></div>
-                <div>
-                  <p class="skill-name">React</p>
-                  <p class="skill-meta">UI moderna</p>
-                </div>
+        <div class="exp-list" data-aos="fade-up">
+
+          <!-- Freelancer -->
+          <div class="exp-row" data-start="2025-10" data-end="present" data-aos="fade-up" data-aos-delay="0">
+            <div class="exp-meta">
+              <span class="exp-year" data-i18n="exp1-year">out 2025<br>presente</span>
+              <span class="exp-duration"></span>
+            </div>
+            <div class="exp-axis"><div class="exp-dot"></div><div class="exp-line"></div></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <span class="exp-role" data-i18n="exp1-role">Freelancer</span>
+                <span class="exp-type" data-i18n="exp1-type">Autônomo</span>
+                <span class="exp-badge-current"><i class="bi bi-circle-fill" style="font-size:.42rem"></i><span data-i18n="exp1-current">Atual</span></span>
+              </div>
+              <p class="exp-desc" data-i18n="exp1-desc">Desenvolvimento de soluções web sob demanda — frontend, backend e deploy para clientes variados.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="ptag">Laravel</span><span class="ptag">React</span><span class="ptag">Vue</span><span class="ptag">Docker</span>
               </div>
             </div>
           </div>
 
+          <!-- COE -->
+          <div class="exp-row" data-start="2024-03" data-end="2025-10" data-aos="fade-up" data-aos-delay="80">
+            <div class="exp-meta">
+              <span class="exp-year" data-i18n="exp2-year">mar 2024<br>out 2025</span>
+              <span class="exp-duration"></span>
+            </div>
+            <div class="exp-axis"><div class="exp-dot"></div><div class="exp-line"></div></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <span class="exp-role" data-i18n="exp2-role">Analista de Suporte Técnico I</span>
+                <span class="exp-type" data-i18n="exp2-type">Tempo integral</span>
+              </div>
+              <div class="exp-company">COE | Oncologia e Doenças Autoimunes</div>
+              <p class="exp-desc" data-i18n="exp2-desc">Automatização de tarefas internas e suporte ao sistema MV. Gestão de Active Directory, abertura de chamados e manutenção de infraestrutura hospitalar.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="ptag">Active Directory</span><span class="ptag">Sistema MV</span><span class="ptag">Automatização</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Câmara Municipal -->
+          <div class="exp-row" data-start="2023-03" data-end="2023-12" data-aos="fade-up" data-aos-delay="160">
+            <div class="exp-meta">
+              <span class="exp-year" data-i18n="exp3-year">mar 2023<br>dez 2023</span>
+              <span class="exp-duration"></span>
+            </div>
+            <div class="exp-axis"><div class="exp-dot"></div><div class="exp-line"></div></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <span class="exp-role" data-i18n="exp3-role">Suporte Técnico N1</span>
+                <span class="exp-type" data-i18n="exp3-type">Estágio</span>
+              </div>
+              <div class="exp-company" data-i18n="exp3-company">Câmara Municipal de São José dos Campos</div>
+              <p class="exp-desc" data-i18n="exp3-desc">Diagnóstico de falhas, reparos de hardware e suporte a usuários internos.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="ptag">IT Services</span><span class="ptag">IT Infrastructure</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prefeitura -->
+          <div class="exp-row" data-start="2022-08" data-end="2023-01" data-aos="fade-up" data-aos-delay="240">
+            <div class="exp-meta">
+              <span class="exp-year" data-i18n="exp4-year">ago 2022<br>jan 2023</span>
+              <span class="exp-duration"></span>
+            </div>
+            <div class="exp-axis"><div class="exp-dot"></div><div class="exp-line"></div></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <span class="exp-role" data-i18n="exp4-role">Suporte Técnico N1</span>
+                <span class="exp-type" data-i18n="exp4-type">Estágio</span>
+              </div>
+              <div class="exp-company" data-i18n="exp4-company">Prefeitura Municipal de São José dos Campos</div>
+              <p class="exp-desc" data-i18n="exp4-desc">Suporte técnico N1, abertura de chamados e atendimento a usuários internos da prefeitura.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="ptag">IT Services</span><span class="ptag">Technical Support</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Casa de Ração -->
+          <div class="exp-row" data-start="2021-03" data-end="2022-07" data-aos="fade-up" data-aos-delay="320">
+            <div class="exp-meta">
+              <span class="exp-year" data-i18n="exp5-year">mar 2021<br>jul 2022</span>
+              <span class="exp-duration"></span>
+            </div>
+            <div class="exp-axis"><div class="exp-dot"></div><div class="exp-line"></div></div>
+            <div class="exp-card">
+              <div class="exp-header">
+                <span class="exp-role" data-i18n="exp5-role">Full-stack Developer</span>
+                <span class="exp-type" data-i18n="exp5-type">Meio período</span>
+              </div>
+              <div class="exp-company" data-i18n="exp5-company">Casa de Ração Jardim Sul</div>
+              <p class="exp-desc" data-i18n="exp5-desc">Desenvolvimento de sistema ERP/PDV para controle financeiro e administrativo do comércio — primeiro produto em produção real.</p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="ptag">Laravel</span><span class="ptag">REST APIs</span><span class="ptag">MySQL</span><span class="ptag">Vue.js</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Skills ── -->
+    <section id="skills">
+      <div class="container container-narrow">
+        <div class="row align-items-end justify-content-between g-3 mb-5" data-aos="fade-up">
+          <div class="col-auto">
+            <div class="kicker">Stack</div>
+            <h2 class="h2-like" data-i18n="skills-title">Habilidades</h2>
+          </div>
+          <div class="col-lg-5">
+            <p class="lead-like m-0" style="font-size:.95rem;" data-i18n="skills-sub">Tecnologias que uso no dia a dia — com foco em qualidade, manutenção e entrega.</p>
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+            <div class="skill-card">
+              <div class="d-flex gap-3 align-items-center">
+                <div class="skill-icon"><img src="https://cdn.simpleicons.org/laravel/FF2D20" alt="Laravel"></div>
+                <div><p class="skill-name">Laravel</p><p class="skill-meta">APIs & Jobs</p></div>
+              </div>
+            </div>
+          </div>
           <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50">
             <div class="skill-card">
               <div class="d-flex gap-3 align-items-center">
-                <div class="skill-icon"><img src="./images/skills/typescript-16-svgrepo-com.svg" alt="TypeScript"></div>
-                <div>
-                  <p class="skill-name">TypeScript</p>
-                  <p class="skill-meta">Tipagem forte</p>
-                </div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></div>
+                <div><p class="skill-name">React</p><p class="skill-meta">SPAs & dashboards</p></div>
               </div>
             </div>
           </div>
-
           <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100">
             <div class="skill-card">
               <div class="d-flex gap-3 align-items-center">
-                <div class="skill-icon"><img src="./images/skills/tailwind-svgrepo-com.svg" alt="TailwindCSS"></div>
-                <div>
-                  <p class="skill-name">Tailwind</p>
-                  <p class="skill-meta">Design rápido</p>
+                <div class="skill-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue">
                 </div>
+                <div><p class="skill-name">Vue.js</p><p class="skill-meta">SPAs reativas</p></div>
               </div>
             </div>
           </div>
-
           <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150">
             <div class="skill-card">
               <div class="d-flex gap-3 align-items-center">
-                <div class="skill-icon"><img src="./images/skills/next-js-svgrepo-com.svg" alt="Next.js"></div>
-                <div>
-                  <p class="skill-name">Next.js</p>
-                  <p class="skill-meta">SSR/SPA</p>
-                </div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"></div>
+                <div><p class="skill-name">TypeScript</p><p class="skill-meta">Tipagem forte</p></div>
               </div>
             </div>
           </div>
-
           <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200">
             <div class="skill-card">
               <div class="d-flex gap-3 align-items-center">
-                <div class="skill-icon"><img src="./images/skills/laravel-svgrepo-com.svg" alt="Laravel"></div>
-                <div>
-                  <p class="skill-name">Laravel</p>
-                  <p class="skill-meta">APIs e jobs</p>
-                </div>
+                <div class="skill-icon"><img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind"></div>
+                <div><p class="skill-name">Tailwind</p><p class="skill-meta">Estilo utilitário</p></div>
               </div>
             </div>
           </div>
-
           <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="250">
             <div class="skill-card">
               <div class="d-flex gap-3 align-items-center">
-                <div class="skill-icon"><img src="./images/skills/django-svgrepo-com.svg" alt="Django"></div>
-                <div>
-                  <p class="skill-name">Django</p>
-                  <p class="skill-meta">Backend</p>
-                </div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"></div>
+                <div><p class="skill-name">MySQL</p><p class="skill-meta">Banco relacional</p></div>
               </div>
             </div>
           </div>
-
           <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300">
             <div class="skill-card">
               <div class="d-flex gap-3 align-items-center">
-                <div class="skill-icon"><img src="./images/skills/mysql-svgrepo-com.svg" alt="MySQL"></div>
-                <div>
-                  <p class="skill-name">MySQL</p>
-                  <p class="skill-meta">Relacional</p>
+                <div class="skill-icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
                 </div>
+                <div><p class="skill-name">Docker</p><p class="skill-meta">Containers</p></div>
               </div>
             </div>
           </div>
-
           <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="350">
             <div class="skill-card">
               <div class="d-flex gap-3 align-items-center">
-                <div class="skill-icon"><img src="./images/skills/git-svgrepo-com.svg" alt="Git"></div>
-                <div>
-                  <p class="skill-name">Git</p>
-                  <p class="skill-meta">Fluxos/PRs</p>
-                </div>
+                <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div>
+                <div><p class="skill-name">Git</p><p class="skill-meta">Versionamento</p></div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- ── Projects ── -->
     <section id="projects">
       <div class="container container-narrow">
-        <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-4" data-aos="fade-up">
-          <div>
-            <div class="kicker">Trabalho</div>
-            <h2 class="h1-like" style="font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom:0;">Projetos</h2>
+        <div class="row align-items-end justify-content-between g-3 mb-5" data-aos="fade-up">
+          <div class="col-auto">
+            <div class="kicker" data-i18n="projects-kicker">Trabalho</div>
+            <h2 class="h2-like" data-i18n="projects-title">Projetos</h2>
           </div>
-          <p class="lead-like m-0" style="max-width: 520px;">
-            Alguns projetos que representam bem meu estilo de arquitetura e entrega.
-          </p>
+          <div class="col-lg-5">
+            <p class="lead-like m-0" style="font-size:.95rem;" data-i18n="projects-sub">Produtos e sistemas que construí — da arquitetura ao deploy.</p>
+          </div>
         </div>
 
         <div class="row g-3">
-          <!-- 1 -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+
+          <!-- Petti -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
             <div class="project-card">
               <div class="project-thumb">
-                <img src="images/repos/dynamic form.png" alt="Campos de Formulário Dinâmicos">
+                <div class="thumb-slider" id="petti-slider">
+                  <div class="slide active"><img src="images/petti/1.png" alt="Petti — Landing page" loading="lazy"></div>
+                  <div class="slide"><img src="images/petti/2.png" alt="Petti — Dashboard" loading="lazy"></div>
+                  <div class="slide"><img src="images/petti/3.png" alt="Petti — PDV" loading="lazy"></div>
+                  <div class="slide"><img src="images/petti/4.png" alt="Petti — Relatórios" loading="lazy"></div>
+                  <div class="thumb-dots">
+                    <div class="thumb-dot active" data-slide="0"></div>
+                    <div class="thumb-dot" data-slide="1"></div>
+                    <div class="thumb-dot" data-slide="2"></div>
+                    <div class="thumb-dot" data-slide="3"></div>
+                  </div>
+                </div>
               </div>
               <div class="project-body">
-                <div class="project-title">
-                  <img src="images/icons/laravel.png" alt="Laravel">
-                  Campos Dinâmicos (Laravel)
+                <span class="project-badge badge-live"><i class="bi bi-circle-fill" style="font-size:.5rem"></i> Live</span>
+                <div class="project-title">Petti</div>
+                <p class="project-desc" data-i18n="petti-desc">PDV completo para lojas de ração — gestão de vendas, estoque, clientes e caixa.</p>
+                <div class="project-tags">
+                  <span class="ptag">Laravel</span>
+                  <span class="ptag">Vue.js</span>
+                  <span class="ptag">MySQL</span>
+                  <span class="ptag">PDV</span>
                 </div>
-                <p class="project-desc">
-                  Repositório para auxiliar a criação de formulários com campos dinâmicos — solução prática e direta.
-                </p>
-                <div class="mb-2">
-                  <span class="tag">Laravel</span>
-                  <span class="tag">Bootstrap</span>
-                  <span class="tag">SQL</span>
-                </div>
-                <div class="project-actions d-flex gap-3">
-                  <a href="https://github.com/giovane-breno/Dynamic-Form-Fields-in-Laravel" target="_blank" rel="noreferrer">
-                    <i class="bi bi-box-arrow-up-right me-1"></i>Repositório
-                  </a>
-                </div>
+                <a href="https://petti.tech/" target="_blank" rel="noreferrer" class="project-link">
+                  <span data-i18n="petti-link">Ver projeto</span> <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
             </div>
           </div>
 
-          <!-- 2 -->
+          <!-- Sistema de Gestão 3.0 -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
             <div class="project-card">
               <div class="project-thumb">
-                <img src="images/repos/api-customer.png" alt="API de Cadastro de Clientes">
+                <img src="images/repos/cdr_v3/cdrReact1.png" alt="Sistema de Gestão 3.0" onerror="this.parentElement.innerHTML='<div class=\'project-thumb-placeholder\'>⚙️</div>'">
               </div>
               <div class="project-body">
-                <div class="project-title">
-                  <img src="images/icons/laravel.png" alt="Laravel">
-                  API de Clientes (Laravel)
-                </div>
-                <p class="project-desc">
-                  CRUD completo via API REST: cadastro, consulta, alteração e exclusão com persistência em banco.
-                </p>
-                <div class="mb-2">
-                  <span class="tag">REST</span>
-                  <span class="tag">Laravel</span>
-                  <span class="tag">MySQL/Postgres</span>
-                </div>
-                <div class="project-actions d-flex gap-3">
-                  <a href="https://github.com/giovane-breno/customer_management" target="_blank" rel="noreferrer">
-                    <i class="bi bi-box-arrow-up-right me-1"></i>Repositório
-                  </a>
+                <span class="project-badge badge-oss" data-i18n="gestao-badge"><i class="bi bi-stars"></i> Destaque</span>
+                <div class="project-title">Sistema de Gestão 3.0</div>
+                <p class="project-desc" data-i18n="gestao-desc">Backend refeito e interface do zero com foco em UX — Laravel + React/TS + Electron.</p>
+                <div class="project-tags">
+                  <span class="ptag">Laravel</span>
+                  <span class="ptag">React + TS</span>
+                  <span class="ptag">Electron</span>
+                  <span class="ptag">Tailwind</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- 3 -->
+          <!-- Alpha System Web -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
             <div class="project-card">
               <div class="project-thumb">
-                <img src="images/repos/alpha_system/web1.png" alt="Alpha System Web">
+                <img src="images/repos/alpha_system/web1.png" alt="Alpha System Web" onerror="this.parentElement.innerHTML='<div class=\'project-thumb-placeholder\'>🏢</div>'">
               </div>
               <div class="project-body">
-                <div class="project-title">
-                  <img src="images/icons/laravel.png" alt="Laravel">
-                  Alpha System (Web)
+                <span class="project-badge badge-oss"><i class="bi bi-code-slash"></i> Open Source</span>
+                <div class="project-title">Alpha System (Web)</div>
+                <p class="project-desc" data-i18n="alpha-web-desc">API Laravel integrada com Next.js + Material UI para folha de pagamento.</p>
+                <div class="project-tags">
+                  <span class="ptag">Laravel</span>
+                  <span class="ptag">Next.js</span>
+                  <span class="ptag">MySQL</span>
                 </div>
-                <p class="project-desc">
-                  API em Laravel integrada com frontend em Next.js + Material UI para folha de pagamento (versão web).
-                </p>
-                <div class="mb-2">
-                  <span class="tag">Laravel</span>
-                  <span class="tag">Next.js</span>
-                  <span class="tag">MySQL</span>
-                </div>
-                <div class="project-actions d-flex gap-3">
-                  <a href="https://github.com/giovane-breno/alpha-system-web" target="_blank" rel="noreferrer">
-                    <i class="bi bi-box-arrow-up-right me-1"></i>Repositório
-                  </a>
-                </div>
+                <a href="https://github.com/giovane-breno/alpha-system-web" target="_blank" rel="noreferrer" class="project-link">
+                  <span data-i18n="alpha-web-link">Repositório</span> <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
             </div>
           </div>
 
-          <!-- 4 -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <!-- API Clientes -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
             <div class="project-card">
               <div class="project-thumb">
-                <img src="images/repos/cdr_v3/cdrReact1.png" alt="Sistema de Gestão 3.0">
+                <img src="images/repos/api-customer.png" alt="API Clientes" onerror="this.parentElement.innerHTML='<div class=\'project-thumb-placeholder\'>🔌</div>'">
               </div>
               <div class="project-body">
-                <div class="project-title">
-                  <img src="images/icons/laravel.png" alt="Laravel">
-                  Sistema de Gestão 3.0
+                <span class="project-badge badge-oss"><i class="bi bi-code-slash"></i> Open Source</span>
+                <div class="project-title">API de Clientes</div>
+                <p class="project-desc" data-i18n="api-desc">CRUD completo via REST — cadastro, consulta, alteração e exclusão com persistência.</p>
+                <div class="project-tags">
+                  <span class="ptag">REST</span>
+                  <span class="ptag">Laravel</span>
+                  <span class="ptag">MySQL</span>
                 </div>
-                <p class="project-desc">
-                  Backend refeito e interface do zero com foco em UX e funcionalidades: Laravel + React/TS + Electron.
-                </p>
-                <div class="mb-2">
-                  <span class="tag">Laravel</span>
-                  <span class="tag">React + TS</span>
-                  <span class="tag">Electron</span>
-                  <span class="tag">Tailwind</span>
-                </div>
+                <a href="https://github.com/giovane-breno/customer_management" target="_blank" rel="noreferrer" class="project-link">
+                  <span data-i18n="api-link">Repositório</span> <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
             </div>
           </div>
 
-          <!-- 5 -->
+          <!-- Campos Dinâmicos -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="60">
             <div class="project-card">
               <div class="project-thumb">
-                <img src="images/repos/cdr_v2/cdrlaravel1.png" alt="Sistema de Gestão 2.0">
+                <img src="images/repos/dynamic form.png" alt="Campos Dinâmicos" onerror="this.parentElement.innerHTML='<div class=\'project-thumb-placeholder\'>📋</div>'">
               </div>
               <div class="project-body">
-                <div class="project-title">
-                  <img src="images/icons/laravel.png" alt="Laravel">
-                  Sistema de Gestão 2.0
+                <span class="project-badge badge-oss"><i class="bi bi-code-slash"></i> Open Source</span>
+                <div class="project-title">Campos Dinâmicos</div>
+                <p class="project-desc" data-i18n="dynamic-desc">Solução prática para formulários com campos dinâmicos em Laravel.</p>
+                <div class="project-tags">
+                  <span class="ptag">Laravel</span>
+                  <span class="ptag">Bootstrap</span>
+                  <span class="ptag">SQL</span>
                 </div>
-                <p class="project-desc">
-                  Evolução do sistema anterior: mais funções, mais robusto, baseado em CRUD e regras de negócio.
-                </p>
-                <div class="mb-2">
-                  <span class="tag">Laravel</span>
-                  <span class="tag">Bootstrap</span>
-                  <span class="tag">SQL</span>
-                </div>
+                <a href="https://github.com/giovane-breno/Dynamic-Form-Fields-in-Laravel" target="_blank" rel="noreferrer" class="project-link">
+                  <span data-i18n="dynamic-link">Repositório</span> <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
             </div>
           </div>
 
-          <!-- 6 -->
+          <!-- Alpha System TCC -->
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
             <div class="project-card">
               <div class="project-thumb">
-                <img src="images/repos/alpha_system/github.png" alt="Alpha System TCC">
+                <img src="images/repos/alpha_system/github.png" alt="Alpha System TCC" onerror="this.parentElement.innerHTML='<div class=\'project-thumb-placeholder\'>🎓</div>'">
               </div>
               <div class="project-body">
-                <div class="project-title">
-                  <img src="images/icons/github.svg" alt="GitHub">
-                  Alpha System (TCC)
+                <span class="project-badge badge-oss" data-i18n="tcc-badge"><i class="bi bi-mortarboard"></i> TCC</span>
+                <div class="project-title">Alpha System (TCC)</div>
+                <p class="project-desc" data-i18n="tcc-desc">Atuei como Product Owner e dev web — liderei a organização, roadmap e entrega do produto final.</p>
+                <div class="project-tags">
+                  <span class="ptag">Next.js</span>
+                  <span class="ptag">C#</span>
+                  <span class="ptag">Laravel</span>
+                  <span class="ptag">PO</span>
                 </div>
-                <p class="project-desc">
-                  Atuação como Product Owner e dev web: organização do trabalho, tarefas e entrega do produto.
-                </p>
-                <div class="mb-2">
-                  <span class="tag">PO</span>
-                  <span class="tag">Next.js</span>
-                  <span class="tag">C#</span>
-                  <span class="tag">Laravel</span>
-                </div>
-                <div class="project-actions d-flex gap-3">
-                  <a href="https://github.com/giovane-breno/ALPHA-SYSTEM" target="_blank" rel="noreferrer">
-                    <i class="bi bi-box-arrow-up-right me-1"></i>Repositório
-                  </a>
-                </div>
+                <a href="https://github.com/giovane-breno/ALPHA-SYSTEM" target="_blank" rel="noreferrer" class="project-link">
+                  <span data-i18n="tcc-link">Repositório</span> <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -637,60 +1281,501 @@
         </div>
 
         <div class="mt-4 d-flex flex-wrap gap-2" data-aos="fade-up">
-          <a class="btn btn-brand" href="https://github.com/giovane-breno" target="_blank" rel="noreferrer">
-            <i class="bi bi-github me-2"></i>Ver mais no GitHub
+          <a class="btn-brand" href="https://github.com/giovane-breno" target="_blank" rel="noreferrer">
+            <i class="bi bi-github"></i><span data-i18n="btn-github">Ver mais no GitHub</span>
           </a>
-          <a class="btn btn-ghost" href="#about">
-            <i class="bi bi-arrow-up me-2"></i>Voltar ao topo
+          <a class="btn-ghost" href="#about">
+            <i class="bi bi-arrow-up"></i><span data-i18n="btn-top">Voltar ao topo</span>
           </a>
         </div>
       </div>
     </section>
   </main>
 
+    <!-- ── Contact ── -->
+    <section id="contact">
+      <div class="container container-narrow">
+        <div class="text-center mb-2" data-aos="fade-up">
+          <div class="kicker d-inline-block" data-i18n="contact-kicker">Contato</div>
+        </div>
+        <h2 class="h2-like text-center mb-3" data-aos="fade-up" data-i18n="contact-title">Vamos conversar?</h2>
+        <p class="lead-like text-center mx-auto mb-0" style="max-width:520px;" data-aos="fade-up" data-i18n="contact-sub">
+          Aberto a oportunidades, projetos freelance ou só uma troca de ideia.
+        </p>
+
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:giovane.breno@gmail.com" data-aos="fade-up" data-aos-delay="0">
+            <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
+            <div>
+              <div class="contact-label" data-i18n="contact-lbl-email">Email</div>
+              <div class="contact-value">giovane.breno@gmail.com</div>
+            </div>
+          </a>
+          <a class="contact-item" href="https://www.linkedin.com/in/giovane-breno/" target="_blank" rel="noreferrer" data-aos="fade-up" data-aos-delay="80">
+            <div class="contact-icon"><i class="bi bi-linkedin"></i></div>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">giovane-breno</div>
+            </div>
+          </a>
+          <a class="contact-item" href="https://github.com/giovane-breno" target="_blank" rel="noreferrer" data-aos="fade-up" data-aos-delay="160">
+            <div class="contact-icon"><i class="bi bi-github"></i></div>
+            <div>
+              <div class="contact-label">GitHub</div>
+              <div class="contact-value">giovane-breno</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
   <footer>
-    <div class="container container-narrow d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <div>© <span id="year"></span> Giovane Barbosa</div>
-      <div class="d-flex gap-3">
-        <a class="text-decoration-none" style="color:var(--muted)" href="https://github.com/giovane-breno" target="_blank" rel="noreferrer">
-          <i class="bi bi-github me-1"></i>GitHub
-        </a>
-        <a class="text-decoration-none" style="color:var(--muted)" href="https://www.linkedin.com/in/giovane-breno/" target="_blank" rel="noreferrer">
-          <i class="bi bi-linkedin me-1"></i>LinkedIn
-        </a>
+    <div class="container container-narrow d-flex flex-wrap justify-content-between align-items-center gap-3">
+      <span>© <span id="year"></span> Giovane Barbosa</span>
+      <div class="d-flex gap-4">
+        <a href="https://github.com/giovane-breno" target="_blank" rel="noreferrer"><i class="bi bi-github me-1"></i>GitHub</a>
+        <a href="https://www.linkedin.com/in/giovane-breno/" target="_blank" rel="noreferrer"><i class="bi bi-linkedin me-1"></i>LinkedIn</a>
+        <a href="mailto:giovane.breno@gmail.com"><i class="bi bi-envelope me-1"></i>Email</a>
       </div>
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
+  <div id="section-bg">
+    <div class="sg-layer active" id="sg-about"></div>
+    <div class="sg-layer" id="sg-experience"></div>
+    <div class="sg-layer" id="sg-skills"></div>
+    <div class="sg-layer" id="sg-projects"></div>
+    <div class="sg-layer" id="sg-contact"></div>
+  </div>
+
+  <button id="back-to-top" aria-label="Voltar ao topo">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <div id="cursor-glow"></div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
   <script>
-    AOS.init({ once: true, duration: 650, easing: "ease-out" });
+    AOS.init({ once: true, duration: 600, easing: "ease-out" });
 
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener("click", (e) => {
+      a.addEventListener("click", e => {
         const id = a.getAttribute("href");
         if (!id || id === "#") return;
         const el = document.querySelector(id);
         if (!el) return;
-
         e.preventDefault();
         el.scrollIntoView({ behavior: "smooth", block: "start" });
-
-        // fecha menu mobile
         const nav = document.querySelector("#nav");
-        if (nav && nav.classList.contains("show")) {
-          bootstrap.Collapse.getOrCreateInstance(nav).hide();
-        }
+        if (nav?.classList.contains("show")) bootstrap.Collapse.getOrCreateInstance(nav).hide();
       });
     });
 
     document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Lightbox overlay — must be in DOM before the main script runs -->
+  <div id="lightbox">
+    <span id="lb-close">&times;</span>
+    <span id="lb-prev">&#8249;</span>
+    <img id="lb-img" src="" alt="preview">
+    <span id="lb-next">&#8250;</span>
+  </div>
+
+  <script>
+    // ── Typing animation (loop) ──
+    (function(){
+      const el = document.getElementById('hero-kicker');
+      const text = el.textContent.trim();
+      el.textContent = '';
+      el.classList.add('typing');
+      function typeForward() {
+        let i = 0;
+        const t = setInterval(() => {
+          el.textContent += text[i++];
+          if (i >= text.length) { clearInterval(t); setTimeout(typeBackward, 2200); }
+        }, 80);
+      }
+      function typeBackward() {
+        const t = setInterval(() => {
+          el.textContent = el.textContent.slice(0, -1);
+          if (!el.textContent.length) { clearInterval(t); setTimeout(typeForward, 500); }
+        }, 45);
+      }
+      typeForward();
+    })();
+
+    // ── Anos de experiência (desde mar/2021) ──
+    (function(){
+      const start = new Date(2021, 2);
+      const years = Math.floor((Date.now() - start) / (1000 * 60 * 60 * 24 * 365.25));
+      const el = document.getElementById('stat-years-num');
+      if (el) el.dataset.countTo = years;
+    })();
+
+    // ── Contador animado nos stats ──
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.countTo || 0);
+      const suffix = el.dataset.suffix || '';
+      if (!target) return;
+      const duration = 900, steps = 45;
+      let step = 0;
+      el.textContent = '0' + suffix;
+      const timer = setInterval(() => {
+        step++;
+        const val = Math.round(target * (1 - Math.pow(1 - step / steps, 3)));
+        el.textContent = val + suffix;
+        if (step >= steps) { el.textContent = target + suffix; clearInterval(timer); }
+      }, duration / steps);
+    }
+    const heroObserver = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        document.querySelectorAll('.count-up').forEach(animateCounter);
+        heroObserver.disconnect();
+      }
+    }, { threshold: 0.5 });
+    const heroSection = document.getElementById('about');
+    if (heroSection) heroObserver.observe(heroSection);
+
+    // ── Botão voltar ao topo ──
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 320);
+    }, { passive: true });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ── Toast ──
+    function showToast(msg) {
+      const existing = document.querySelector('.toast-msg');
+      if (existing) existing.remove();
+      const t = document.createElement('div');
+      t.className = 'toast-msg';
+      t.innerHTML = '<i class="bi bi-check2"></i>' + msg;
+      document.body.appendChild(t);
+      requestAnimationFrame(() => requestAnimationFrame(() => t.classList.add('show')));
+      setTimeout(() => {
+        t.classList.remove('show');
+        setTimeout(() => t.remove(), 300);
+      }, 2200);
+    }
+
+    // ── Email → copiar ──
+    document.querySelectorAll('a[href="mailto:giovane.breno@gmail.com"]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        navigator.clipboard.writeText('giovane.breno@gmail.com').then(() => {
+          showToast(currentLang === 'br' ? 'Email copiado!' : 'Email copied!');
+        }).catch(() => {
+          window.location.href = 'mailto:giovane.breno@gmail.com';
+        });
+      });
+    });
+
+    // ── Scroll progress bar ──
+    const scrollBar = document.getElementById('scroll-bar');
+    window.addEventListener('scroll', () => {
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+      scrollBar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
+    // ── Active nav link on scroll ──
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const bgLayerMap = { about:'sg-about', experience:'sg-experience', skills:'sg-skills', projects:'sg-projects', contact:'sg-contact' };
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+          document.querySelectorAll('.sg-layer').forEach(l => l.classList.remove('active'));
+          const bg = document.getElementById(bgLayerMap[entry.target.id]);
+          if (bg) bg.classList.add('active');
+        }
+      });
+    }, { threshold: 0.25, rootMargin: '-80px 0px -40% 0px' });
+    sections.forEach(s => navObserver.observe(s));
+
+    // ── Cursor glow ──
+    const glow = document.getElementById('cursor-glow');
+    document.addEventListener('mousemove', e => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top  = e.clientY + 'px';
+    });
+
+    // ── Dark / Light mode ──
+    const themeBtn = document.getElementById('themeToggle');
+    const applyTheme = t => {
+      document.documentElement.setAttribute('data-theme', t);
+      themeBtn.textContent = t === 'light' ? '☀️' : '🌙';
+      localStorage.setItem('theme', t);
+    };
+    applyTheme(localStorage.getItem('theme') || 'dark');
+    themeBtn.addEventListener('click', () => {
+      applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+    });
+
+    // ── Language (BR / EN) ──
+    const langBtn = document.getElementById('langToggle');
+    const i18n = {
+      br: {
+        'nav-about':      'Sobre',
+        'nav-projects':   'Projetos',
+        'hero-greeting':  'Olá, sou',
+        'hero-p1':        'Desenvolvedor Fullstack com graduação em ADS. Construo produtos SaaS do zero — arquitetura sólida, código limpo e entrega que funciona em produção.',
+        'hero-p2':        'Backend com <strong>Laravel</strong> e APIs RESTful; frontend com <strong>React</strong>, <strong>Vue</strong> e <strong>TypeScript</strong>. Cuido do ciclo completo: do desenvolvimento ao deploy com CI/CD, Docker e VPS.',
+        'btn-projects':   'Ver projetos',
+        'btn-contact':    'Contato',
+        'stat-years':     'Anos',
+        'stat-projects':  'Projetos',
+        'stat-techs':     'Tecnologias',
+        'skills-title':   'Habilidades',
+        'skills-sub':     'Tecnologias que uso no dia a dia — com foco em qualidade, manutenção e entrega.',
+        'projects-kicker':'Trabalho',
+        'projects-title': 'Projetos',
+        'projects-sub':   'Produtos e sistemas que construí — da arquitetura ao deploy.',
+        'petti-desc':     'PDV completo para lojas de ração — gestão de vendas, estoque, clientes e caixa.',
+        'petti-link':     'Ver projeto',
+        'gestao-badge':   '<i class="bi bi-stars"></i> Destaque',
+        'gestao-desc':    'Backend refeito e interface do zero com foco em UX — Laravel + React/TS + Electron.',
+        'alpha-web-desc': 'API Laravel integrada com Next.js + Material UI para folha de pagamento.',
+        'alpha-web-link': 'Repositório',
+        'api-desc':       'CRUD completo via REST — cadastro, consulta, alteração e exclusão com persistência.',
+        'api-link':       'Repositório',
+        'dynamic-desc':   'Solução prática para formulários com campos dinâmicos em Laravel.',
+        'dynamic-link':   'Repositório',
+        'tcc-badge':      '<i class="bi bi-mortarboard"></i> TCC',
+        'tcc-desc':       'Atuei como Product Owner e dev web — liderei a organização, roadmap e entrega do produto final.',
+        'tcc-link':       'Repositório',
+        'btn-github':     'Ver mais no GitHub',
+        'btn-top':        'Voltar ao topo',
+        'btn-cv':         'Download CV',
+        'badge-available':'Disponível para oportunidades',
+        'nav-experience': 'Experiência',
+        'nav-contact':    'Contato',
+        'contact-kicker': 'Contato',
+        'contact-title':  'Vamos conversar?',
+        'contact-sub':    'Aberto a oportunidades, projetos freelance ou só uma troca de ideia.',
+        'contact-lbl-email': 'Email',
+        'exp-kicker':     'Carreira',
+        'exp-title':      'Experiência',
+        'exp-sub':        'Empresas onde trabalhei e o que entreguei ao longo da carreira.',
+        'exp1-role':'Freelancer','exp1-type':'Autônomo','exp1-current':'Atual',
+        'exp1-year':'out 2025<br>presente','exp1-dur':'9 meses',
+        'exp1-desc':'Desenvolvimento de soluções web sob demanda — frontend, backend e deploy para clientes variados.',
+        'exp2-role':'Analista de Suporte Técnico I','exp2-type':'Tempo integral',
+        'exp2-year':'mar 2024<br>out 2025','exp2-dur':'1 a 8 m',
+        'exp2-desc':'Automatização de tarefas internas e suporte ao sistema MV. Gestão de Active Directory, abertura de chamados e manutenção de infraestrutura hospitalar.',
+        'exp3-role':'Suporte Técnico N1','exp3-type':'Estágio',
+        'exp3-company':'Câmara Municipal de São José dos Campos',
+        'exp3-year':'mar 2023<br>dez 2023','exp3-dur':'10 meses',
+        'exp3-desc':'Diagnóstico de falhas, reparos de hardware e suporte a usuários internos.',
+        'exp4-role':'Suporte Técnico N1','exp4-type':'Estágio',
+        'exp4-company':'Prefeitura Municipal de São José dos Campos',
+        'exp4-year':'ago 2022<br>jan 2023','exp4-dur':'6 meses',
+        'exp4-desc':'Suporte técnico N1, abertura de chamados e atendimento a usuários internos da prefeitura.',
+        'exp5-role':'Full-stack Developer','exp5-type':'Meio período',
+        'exp5-company':'Casa de Ração Jardim Sul',
+        'exp5-year':'mar 2021<br>jul 2022','exp5-dur':'1 a 5 m',
+        'exp5-desc':'Desenvolvimento de sistema ERP/PDV para controle financeiro e administrativo do comércio — primeiro produto em produção real.',
+      },
+      en: {
+        'nav-about':      'About',
+        'nav-projects':   'Projects',
+        'hero-greeting':  'Hi, I\'m',
+        'hero-p1':        'Fullstack Developer with a degree in Systems Analysis. I build SaaS products from scratch — solid architecture, clean code, and delivery that works in production.',
+        'hero-p2':        'Backend with <strong>Laravel</strong> and RESTful APIs; frontend with <strong>React</strong>, <strong>Vue</strong>, and <strong>TypeScript</strong>. I handle the full cycle: from development to deploy with CI/CD, Docker and VPS.',
+        'btn-projects':   'View projects',
+        'btn-contact':    'Contact',
+        'stat-years':     'Years',
+        'stat-projects':  'Projects',
+        'stat-techs':     'Technologies',
+        'skills-title':   'Skills',
+        'skills-sub':     'Technologies I use daily — focused on quality, maintainability and delivery.',
+        'projects-kicker':'Work',
+        'projects-title': 'Projects',
+        'projects-sub':   'Products and systems I built — from architecture to deploy.',
+        'petti-desc':     'Full POS for pet stores — sales, inventory, customer and cash management.',
+        'petti-link':     'View project',
+        'gestao-badge':   '<i class="bi bi-stars"></i> Featured',
+        'gestao-desc':    'Backend rebuilt and UI from scratch with UX focus — Laravel + React/TS + Electron.',
+        'alpha-web-desc': 'Laravel API integrated with Next.js + Material UI for payroll management.',
+        'alpha-web-link': 'Repository',
+        'api-desc':       'Full CRUD via REST — create, read, update and delete with persistence.',
+        'api-link':       'Repository',
+        'dynamic-desc':   'Practical solution for dynamic form fields in Laravel.',
+        'dynamic-link':   'Repository',
+        'tcc-badge':      '<i class="bi bi-mortarboard"></i> Thesis',
+        'tcc-desc':       'Acted as Product Owner and web dev — led the organization, roadmap and final product delivery.',
+        'tcc-link':       'Repository',
+        'btn-github':     'More on GitHub',
+        'btn-top':        'Back to top',
+        'btn-cv':         'Download CV',
+        'badge-available':'Open to opportunities',
+        'nav-experience': 'Experience',
+        'nav-contact':    'Contact',
+        'contact-kicker': 'Contact',
+        'contact-title':  'Let\'s talk?',
+        'contact-sub':    'Open to opportunities, freelance projects or just a chat.',
+        'contact-lbl-email': 'Email',
+        'exp-kicker':     'Career',
+        'exp-title':      'Experience',
+        'exp-sub':        'Companies I worked at and what I delivered throughout my career.',
+        'exp1-role':'Freelancer','exp1-type':'Self-employed','exp1-current':'Current',
+        'exp1-year':'Oct 2025<br>present','exp1-dur':'9 months',
+        'exp1-desc':'On-demand web development — frontend, backend and deploy for various clients.',
+        'exp2-role':'Technical Support Analyst I','exp2-type':'Full-time',
+        'exp2-year':'Mar 2024<br>Oct 2025','exp2-dur':'1 yr 8 mo',
+        'exp2-desc':'Internal task automation and MV system support. Active Directory management, ticketing and hospital infrastructure maintenance.',
+        'exp3-role':'Technical Support N1','exp3-type':'Internship',
+        'exp3-company':'City Council of São José dos Campos',
+        'exp3-year':'Mar 2023<br>Dec 2023','exp3-dur':'10 months',
+        'exp3-desc':'Failure diagnosis, hardware repairs and internal user support.',
+        'exp4-role':'Technical Support N1','exp4-type':'Internship',
+        'exp4-company':'Municipality of São José dos Campos',
+        'exp4-year':'Aug 2022<br>Jan 2023','exp4-dur':'6 months',
+        'exp4-desc':'N1 technical support, ticket management and internal user assistance.',
+        'exp5-role':'Full-stack Developer','exp5-type':'Part-time',
+        'exp5-company':'Casa de Ração Jardim Sul',
+        'exp5-year':'Mar 2021<br>Jul 2022','exp5-dur':'1 yr 5 mo',
+        'exp5-desc':'Built an ERP/POS system for financial and administrative control of the store — first product shipped to production.',
+      }
+    };
+
+    function calcDuration(startStr, endStr, lang) {
+      const [sy, sm] = startStr.split('-').map(Number);
+      let ey, em;
+      if (endStr === 'present') {
+        const now = new Date();
+        ey = now.getFullYear();
+        em = now.getMonth() + 1;
+      } else {
+        [ey, em] = endStr.split('-').map(Number);
+      }
+      const total = (ey - sy) * 12 + (em - sm) + 1;
+      const yrs = Math.floor(total / 12);
+      const mos = total % 12;
+      if (lang === 'br') {
+        if (yrs && mos) return `${yrs} ano${yrs > 1 ? 's' : ''} ${mos} ${mos === 1 ? 'mês' : 'meses'}`;
+        if (yrs)        return `${yrs} ano${yrs > 1 ? 's' : ''}`;
+        return `${total} ${total === 1 ? 'mês' : 'meses'}`;
+      } else {
+        if (yrs && mos) return `${yrs} yr${yrs > 1 ? 's' : ''} ${mos} mo`;
+        if (yrs)        return `${yrs} yr${yrs > 1 ? 's' : ''}`;
+        return `${total} month${total !== 1 ? 's' : ''}`;
+      }
+    }
+
+    const applyLang = lang => {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const val = i18n[lang][el.getAttribute('data-i18n')];
+        if (val !== undefined) el.innerHTML = val;
+      });
+      document.querySelectorAll('.exp-row[data-start]').forEach(row => {
+        const dur = row.querySelector('.exp-duration');
+        if (dur) dur.textContent = calcDuration(row.dataset.start, row.dataset.end, lang);
+      });
+      document.documentElement.lang = lang === 'br' ? 'pt-BR' : 'en';
+      langBtn.textContent = lang === 'br' ? '🇺🇸 EN' : '🇧🇷 BR';
+      localStorage.setItem('lang', lang);
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'br';
+    if (currentLang === 'br') langBtn.textContent = '🇺🇸 EN';
+    applyLang(currentLang);
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'br' ? 'en' : 'br';
+      applyLang(currentLang);
+    });
+
+    // Petti slider
+    (function(){
+      const slider = document.getElementById('petti-slider');
+      if (!slider) return;
+      const slides = slider.querySelectorAll('.slide');
+      const dots   = slider.querySelectorAll('.thumb-dot');
+      let cur = 0, timer;
+
+      function goTo(i) {
+        slides[cur].classList.remove('active');
+        dots[cur].classList.remove('active');
+        cur = i;
+        slides[cur].classList.add('active');
+        dots[cur].classList.add('active');
+      }
+
+      function next() { goTo((cur + 1) % slides.length); }
+
+      timer = setInterval(next, 2800);
+
+      dots.forEach(d => d.addEventListener('click', () => {
+        clearInterval(timer);
+        goTo(+d.dataset.slide);
+        timer = setInterval(next, 2800);
+      }));
+
+      slider.addEventListener('mouseenter', () => clearInterval(timer));
+      slider.addEventListener('mouseleave', () => { timer = setInterval(next, 2800); });
+    })();
+
+    // Lightbox — div is rendered before this script block
+    (function(){
+      const lb    = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lb-img');
+      const close = document.getElementById('lb-close');
+      const prev  = document.getElementById('lb-prev');
+      const next  = document.getElementById('lb-next');
+      let imgs = [], idx = 0;
+
+      function open(list, i) {
+        imgs = list; idx = i;
+        lbImg.src = imgs[idx];
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        prev.style.display = imgs.length > 1 ? 'flex' : 'none';
+        next.style.display = imgs.length > 1 ? 'flex' : 'none';
+      }
+      function closeLb() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      function show(i) {
+        idx = (i + imgs.length) % imgs.length;
+        lbImg.style.animation = 'none';
+        lbImg.offsetHeight;
+        lbImg.style.animation = '';
+        lbImg.src = imgs[idx];
+      }
+
+      close.addEventListener('click', closeLb);
+      lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+      prev.addEventListener('click', e => { e.stopPropagation(); show(idx - 1); });
+      next.addEventListener('click', e => { e.stopPropagation(); show(idx + 1); });
+
+      document.addEventListener('keydown', e => {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') closeLb();
+        if (e.key === 'ArrowLeft') show(idx - 1);
+        if (e.key === 'ArrowRight') show(idx + 1);
+      });
+
+      // Wire up all project thumbs
+      document.querySelectorAll('.project-thumb').forEach(thumb => {
+        const slider = thumb.querySelector('.thumb-slider');
+        thumb.addEventListener('click', () => {
+          if (slider) {
+            // collect all slide images
+            const list = [...slider.querySelectorAll('.slide img')].map(i => i.src);
+            const active = [...slider.querySelectorAll('.slide')].findIndex(s => s.classList.contains('active'));
+            open(list, active);
+          } else {
+            const img = thumb.querySelector('img');
+            if (img) open([img.src], 0);
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
